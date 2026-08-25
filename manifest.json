@@ -1,0 +1,43 @@
+{
+  "character": "Rumi",
+  "style": "flat-vector",
+  "palette": {
+    "body": "#FFFFFF",
+    "visor_outlines": "#001F3F",
+    "face_glow": "#A8C7FF",
+    "background": "transparent (grids: white)"
+  },
+  "grid_layout": "3x3, row-major, cell order left-to-right top-to-bottom",
+  "grids": [
+    {
+      "file": "grids/grid-1-core-reactions.jpeg",
+      "theme": "core reactions",
+      "cells": ["rumi-happy", "rumi-wink", "rumi-wave", "rumi-thumbs-up", "rumi-heart-eyes", "rumi-laugh", "rumi-thinking", "rumi-sad", "rumi-celebrate"]
+    },
+    {
+      "file": "grids/grid-2-work-states.jpeg",
+      "theme": "agent work states",
+      "cells": ["rumi-done", "rumi-working", "rumi-loading", "rumi-searching", "rumi-idea", "rumi-writing", "rumi-error", "rumi-warning", "rumi-blocked"]
+    },
+    {
+      "file": "grids/grid-3-big-feelings.jpeg",
+      "theme": "rest and big feelings",
+      "cells": ["rumi-sleeping", "rumi-low-battery", "rumi-surprised", "rumi-confused", "rumi-shy", "rumi-crying", "rumi-crying-laughing", "rumi-angry", "rumi-nervous"]
+    },
+    {
+      "file": "grids/grid-4-attitude.jpeg",
+      "theme": "attitude and personality",
+      "cells": ["rumi-smug", "rumi-mind-blown", "rumi-eye-roll", "rumi-facepalm", "rumi-cool", "rumi-starstruck", "rumi-salute", "rumi-shrug", "rumi-peek"]
+    },
+    {
+      "file": "grids/grid-5-teaching.jpeg",
+      "theme": "teaching and encouragement",
+      "cells": ["rumi-teaching", "rumi-graduate", "rumi-clap", "rumi-encourage", "rumi-listening", "rumi-speaking", "rumi-100", "rumi-trophy", "rumi-book"]
+    },
+    {
+      "file": "grids/grid-6-fun-extras.jpeg",
+      "theme": "fun extras",
+      "cells": ["rumi-thanks", "rumi-dance", "rumi-heart", "rumi-reading", "rumi-charging", "rumi-hello", "rumi-curious", "rumi-proud", "rumi-high-five"]
+    }
+  ]
+}
