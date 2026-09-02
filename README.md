@@ -1,36 +1,42 @@
 # Rumi Emoji
 
 Emoji / sticker pack for **Rumi**, the AI teaching assistant ([rumi-platform](https://github.com/Orenda-Project/rumi-platform)) —
-54 expressions of the desk-companion robot character (see [rumi-mini](https://github.com/Orenda-Project/rumi-mini) for the physical body).
+54 expressions of the desk-companion character (see [rumi-mini](https://github.com/Orenda-Project/rumi-mini) for the physical body).
 
-Two bodies, one face. The **slime pack** is the current direction (Sept 2026 team survey: keep the
-face, body becomes a cute slime that takes any shape); the **flat-vector robot pack** is the original.
-On the slime pack the face is the Rumi logo mark (two dots joined by a smile) rendered as vectors by
-`scripts/rumi_face.py` — each emotion reshapes the dots / bends the curve (heart eyes, `><` laugh,
-frown, x-eyes…) while the ends stay attached, and `scripts/paste_face.py` composites it onto the body.
+**Current pack: slime v6.** Rumi is a translucent jelly blob with a navy oval faceplate. The face stays
+small and calm (tiny glowing dot eyes, one thin mouth line, eyebrows only when needed). The **body does the
+acting**: every one of the 54 emoji has its own material, colour and silhouette — lava when angry, cracked
+stone when dead, a rain-cloud puddle when crying, an hourglass when loading, a battery when charging, gold
+glitter on a marble pedestal for the trophy. Props live inside the jelly, thought bubbles carry real content.
 
-| Slime (current) | Flat-vector robot (original) |
-|---|---|
-| ![Slime grid 1](grids-slime/grid-1-core-reactions.png) | ![Grid 1 — Core Reactions](grids/grid-1-core-reactions.jpeg) |
+![Slime v6 preview — all 54](preview-slime-v6.png)
+
+| Core reactions | Big feelings | Attitude |
+|---|---|---|
+| ![Grid 1](grids-slime-v6/grid-1-core-reactions.png) | ![Grid 3](grids-slime-v6/grid-3-big-feelings.png) | ![Grid 4](grids-slime-v6/grid-4-attitude.png) |
+
+## Using as Slack / Discord emoji
+
+Upload the PNGs from **`emoji-slime-v6/128/`** — names are already Slack-style (`rumi-happy`, `rumi-done`, …).
+Slack custom emoji: workspace admin → Customize → Emoji → upload (≤128KB each, these fit).
+Discord: Server Settings → Emoji → upload (≤256KB). `emoji-slime-v6/512/` has the full-size versions.
 
 ## Contents
 
 | Path | What |
 |---|---|
-| `grids-slime-v6/` · `emoji-slime-v6/` · `manifest-slime-v6.json` · `prompts/PROMPTS_SLIME_V6.md` + `slime_v6.json` | **Slime pack v6 (current)** — same 54 names, every cell a different body: material, colour and silhouette change with the emotion (lava, stone, gold, galaxy, rain cloud, hourglass, battery…), face stays small on the navy plate. Preview: `preview-slime-v6.png`. Reference bar: `reference/faces/gemini-9-*.jpeg`. |
-| `grids-slime/` · `emoji-slime/` · `manifest-slime.json` · `prompts/PROMPTS_SLIME.md` + `slime.json` | **Slime pack v5** — same 54 names, translucent gel body, logo-language face. `grids-slime-blank/` = raw faceless model output the pipeline starts from (not for viewing). |
-| `skills/rumi-face/` | **Claude skill**: compose ANY Rumi expression from eye + mouth glyphs and put it on a body. `reference/faces/` = the 17 approved reference renders. |
-| `grids/` | The 6 source 3×3 grids (2048×2048 JPEG), one theme each (robot pack) |
-| `emoji/` | Individual transparent PNGs cut from the grids — `512/` full-size, `128/` Slack/Discord-ready |
-| `manifest.json` | The database: every grid → cell → emoji name, plus the palette |
-| `prompts/PROMPTS.md` | The exact generation prompts (shared character block + per-grid emotions) — reuse verbatim to regenerate or extend |
+| `grids-slime-v6/` · `emoji-slime-v6/` · `manifest-slime-v6.json` · `prompts/PROMPTS_SLIME_V6.md` + `slime_v6.json` · `preview-slime-v6.png` | **Slime pack v6 (current).** 6 source grids (2048×2048), 54 transparent PNGs in `512/` + `128/`, the grid→cell→name database, and the exact prompts. `grids-slime-v6/v6.0/` = the first pass that was too uniform (kept as a before/after). |
+| `reference/faces/gemini-9-*.jpeg` | The quality bar v6 was built to match: 4 Gemini reference grids Kamal approved (2026-09-02). The 17 `ref-*.jpeg` files are the earlier face-glyph references. |
+| `grids-slime/` · `emoji-slime/` · `manifest-slime.json` · `prompts/PROMPTS_SLIME.md` + `slime.json` · `grids-slime-blank/` | **Slime pack v5 (superseded).** Same 54 names, same pale-blue body in every cell, face = vector logo mark composited on by `scripts/paste_face.py` / `scripts/rumi_face.py`. Kept for history; too uniform to ship. |
+| `skills/rumi-face/` | Claude skill: compose a Rumi face from eye + mouth glyphs and put it on a body (v5 pipeline). |
+| `grids/` · `emoji/` · `manifest.json` · `prompts/PROMPTS.md` | **Flat-vector robot pack (original).** White egg-shaped robot with paddle arms, 54 emoji, same names. |
 
-## Character spec (short)
+## Character spec (slime v6)
 
-White egg-shaped head + pill body + paddle arms (EVE-like), navy `#001F3F` visor and outlines,
-glowing white face features with pale-blue `#A8C7FF` glow — the white-on-navy expression of the
-Rumi logo mark (two dots connected by a smile). **No orange/coral/gold on the character** — those
-are UI/deck accents only.
+- **At rest:** frosted white / pale-blue (`#A8C7FF` glow) translucent jelly dome, deep navy `#001F3F` oval faceplate set into the jelly, glowing white dot eyes joined by one thin smile curve (the Rumi logo mark).
+- **Face grammar:** eyes stay small dots by default; big round only for surprised, bulging for panic, spirals for dizzy, hearts for love, closed arcs for laugh/sleep. Mouths: thin smile, filled grin, tongue, open "o", wavy, flat, frown. Thin white eyebrows only when the emotion needs them (angry, skeptical, sick, reading).
+- **Body:** changes material, colour, texture and silhouette per emotion. Soft gel arms grow only when a gesture is needed. Props can sit inside the translucent body. The navy faceplate is kept in every cell, whatever colour the body becomes.
+- **Palette rule:** white/navy is the resting colour; emotion colours (red lava, gold, green, rainbow, grey stone, pastel cloud) are allowed on the body. Coral/gold as flat brand accents still never appear on the resting character.
 
 ## The 6 themes
 
@@ -41,19 +47,22 @@ are UI/deck accents only.
 5. **Teaching** — teaching, graduate, clap, encourage, listening, speaking, 100, trophy, book
 6. **Fun extras** — thanks, dance, heart, reading, charging, hello, curious, proud, high-five
 
-## Using as Slack / Discord emoji
+## Regenerating / extending (v6)
 
-Upload the PNGs from `emoji/128/` — names are already Slack-style (`rumi-happy`, `rumi-done`, …).
-Slack custom emoji: workspace admin → Customize → Emoji → upload (≤128KB each, these fit).
-Discord: Server Settings → Emoji → upload (≤256KB).
+```bash
+python3 scripts/generate_slime.py --prompts prompts/slime_v6.json [1 2 ...]   # Gemini nano-banana-pro, needs GEMINI_API_KEY
+BG_MIN=244 python3 scripts/split_grids.py manifest-slime-v6.json emoji-slime-v6   # cut grids → transparent PNGs
+```
 
-## Regenerating / extending
+Splitter notes: `BG_MIN=244` keeps near-white bodies (iridescent wink, pastel cloud) from being flood-filled
+away; grey bodies (low-battery) get eaten by the grey label eraser — re-run that grid with `LABEL_BAND=0`;
+navy label text joined to a glow halo needs a manual dark-pixel erase in the bottom band.
 
-Slime pack: `python3 scripts/generate_slime.py [grid numbers]` →
-`python3 scripts/split_grids.py manifest-slime.json emoji-slime` →
-`python3 scripts/paste_face.py emoji-slime/512` → `python3 scripts/paste_face.py grids-slime-blank grids-slime --grids` — see `prompts/PROMPTS_SLIME.md`.
+Prompt rules that matter (full text in `prompts/PROMPTS_SLIME_V6.md`):
 
-Robot pack: everything needed is in `prompts/PROMPTS.md` — keep the shared character paragraph and negative
-prompt verbatim and only swap the 9 emotion descriptions (or the style phrase, for pixel/duotone
-variants). Generated with an AI image model at 2K; grids are the source of truth, `emoji/` is
-derived output.
+- **Every emotion description must name a body material + colour + silhouette.** Cells described only by face or gesture fall back to the same pale-blue dome — that is exactly what made v5 flat.
+- The closing must say no two cells share body colour/material/silhouette, the resting dome appears at most once per grid, and the navy faceplate is kept in every cell (without that line, coloured bodies lose the plate).
+- Keep the opening paragraph verbatim for consistency; swap only the 9 emotion lines to add a new grid.
+
+Older pipelines: v5 = `generate_slime.py` (no `--prompts`) → `split_grids.py manifest-slime.json emoji-slime` → `paste_face.py`, see `prompts/PROMPTS_SLIME.md`.
+Robot pack = `prompts/PROMPTS.md`, grids are the source of truth, `emoji/` is derived output.
