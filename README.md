@@ -16,7 +16,7 @@ onto the rendered body by `scripts/paste_face.py` — identical on every emoji, 
 
 | Path | What |
 |---|---|
-| `grids-slime/` · `emoji-slime/` · `manifest-slime.json` · `prompts/PROMPTS_SLIME.md` + `slime.json` | **Slime pack** — same 54 names, translucent gel body. `scripts/generate_slime.py` regenerates grids. |
+| `grids-slime/` · `emoji-slime/` · `manifest-slime.json` · `prompts/PROMPTS_SLIME.md` + `slime.json` | **Slime pack** — same 54 names, translucent gel body, logo-mark face. `grids-slime-blank/` = raw faceless model output the pipeline starts from (not for viewing). |
 | `grids/` | The 6 source 3×3 grids (2048×2048 JPEG), one theme each (robot pack) |
 | `emoji/` | Individual transparent PNGs cut from the grids — `512/` full-size, `128/` Slack/Discord-ready |
 | `manifest.json` | The database: every grid → cell → emoji name, plus the palette |
@@ -48,7 +48,7 @@ Discord: Server Settings → Emoji → upload (≤256KB).
 
 Slime pack: `python3 scripts/generate_slime.py [grid numbers]` →
 `python3 scripts/split_grids.py manifest-slime.json emoji-slime` →
-`python3 scripts/paste_face.py emoji-slime/512` — see `prompts/PROMPTS_SLIME.md`.
+`python3 scripts/paste_face.py emoji-slime/512` → `python3 scripts/paste_face.py grids-slime-blank grids-slime --grids` — see `prompts/PROMPTS_SLIME.md`.
 
 Robot pack: everything needed is in `prompts/PROMPTS.md` — keep the shared character paragraph and negative
 prompt verbatim and only swap the 9 emotion descriptions (or the style phrase, for pixel/duotone

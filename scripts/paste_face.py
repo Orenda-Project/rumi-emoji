@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Paste the real Rumi logo mark onto the blank navy face patch of every emoji.
 
-usage: paste_face.py <emoji-dir>/512 [out-dir]   (default: in place; sibling 128/ is refreshed too)
+usage: paste_face.py <emoji-dir>/512 [out-dir]          (default: in place; sibling 128/ refreshed too)
+       paste_face.py grids-slime-blank grids-slime --grids  (3x3 source grids -> grids with the logo face)
 Per PNG: find the largest dark-navy blob (the face patch), fit its bbox, scale
 the white logo mark to ~74% of the patch width and center it slightly above
 the patch centre. Deterministic: the face IS the logo, pixel for pixel.
@@ -88,9 +89,22 @@ def paste(src, dst, logo):
         im.resize((128, 128), Image.LANCZOS).save(small / dst.name)
 
 
+def paste_grid(src, dst, logo):
+    """3x3 grid: paste the face into each cell (the face detector is per-image, so crop, paste, put back)."""
+    im = Image.open(src).convert("RGBA")
+    w, h = im.size; cw, ch = w // 3, h // 3
+    for r in range(3):
+        for c in range(3):
+            box = (c * cw, r * ch, (c + 1) * cw, (r + 1) * ch)
+            cell = im.crop(box); tmp = dst.parent / f".cell-{r}{c}.png"
+            cell.save(tmp); paste(tmp, tmp, logo); im.paste(Image.open(tmp), box); tmp.unlink()
+    im.convert("RGB").save(dst)
+
+
 if __name__ == "__main__":
     src = Path(sys.argv[1]); out = Path(sys.argv[2]) if len(sys.argv) > 2 else src
     out.mkdir(parents=True, exist_ok=True)
     logo = Image.open(LOGO).convert("RGBA")
+    grid_mode = "--grids" in sys.argv
     for f in sorted(src.glob("*.png")):
-        paste(f, out / f.name, logo); print(f"  {f.name}")
+        (paste_grid if grid_mode else paste)(f, out / f.name, logo); print(f"  {f.name}")

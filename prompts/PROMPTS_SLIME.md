@@ -68,9 +68,14 @@ the mark* in `paste_face.py` — never hand it back to the image model.
 ## Splitting
 
 ```
+python3 scripts/generate_slime.py                        # -> grids-slime-blank/ (empty face patches - source only)
 python3 scripts/split_grids.py manifest-slime.json emoji-slime
-python3 scripts/paste_face.py emoji-slime/512          # in place; refreshes emoji-slime/128 too
+python3 scripts/paste_face.py emoji-slime/512            # logo face onto every emoji; refreshes emoji-slime/128 too
+python3 scripts/paste_face.py grids-slime-blank grids-slime --grids   # the viewable grids, with faces
 ```
+
+`grids-slime-blank/` is raw model output and intentionally faceless - never link it from a README.
+`grids-slime/` is what people should look at.
 
 The existing splitter worked unchanged: the pale-blue tinted rim asked for in the prompt is
 what stops the white-background flood fill from eating the near-white gel interior. If a future

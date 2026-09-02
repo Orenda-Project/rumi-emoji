@@ -10,7 +10,7 @@
   "grid_layout": "3x3, row-major, cell order left-to-right top-to-bottom",
   "grids": [
     {
-      "file": "grids-slime/grid-1-core-reactions.png",
+      "file": "grids-slime-blank/grid-1-core-reactions.png",
       "theme": "core reactions",
       "cells": [
         "rumi-happy",
@@ -25,7 +25,7 @@
       ]
     },
     {
-      "file": "grids-slime/grid-2-work-states.png",
+      "file": "grids-slime-blank/grid-2-work-states.png",
       "theme": "agent work states",
       "cells": [
         "rumi-done",
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "file": "grids-slime/grid-3-big-feelings.png",
+      "file": "grids-slime-blank/grid-3-big-feelings.png",
       "theme": "rest and big feelings",
       "cells": [
         "rumi-sleeping",
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "file": "grids-slime/grid-4-attitude.png",
+      "file": "grids-slime-blank/grid-4-attitude.png",
       "theme": "attitude and personality",
       "cells": [
         "rumi-smug",
@@ -70,7 +70,7 @@
       ]
     },
     {
-      "file": "grids-slime/grid-5-teaching.png",
+      "file": "grids-slime-blank/grid-5-teaching.png",
       "theme": "teaching and encouragement",
       "cells": [
         "rumi-teaching",
@@ -85,7 +85,7 @@
       ]
     },
     {
-      "file": "grids-slime/grid-6-fun-extras.png",
+      "file": "grids-slime-blank/grid-6-fun-extras.png",
       "theme": "fun extras",
       "cells": [
         "rumi-thanks",
