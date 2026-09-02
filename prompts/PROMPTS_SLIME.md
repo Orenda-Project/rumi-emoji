@@ -1,4 +1,4 @@
-# Rumi Emoji — Slime Body (v4: rendered body + vector logo-mark face with expressions)
+# Rumi Emoji — Slime Body (v5: expressive rendered body + reference-grammar vector face)
 
 Second character body for the same 54 emotions: a cute translucent slime that can take any shape.
 Chosen after the September 2026 team survey (see the Rumi Survey Deck): **the face is locked**
@@ -60,20 +60,21 @@ So v3 splits the job: the model renders the slime body with an **empty navy face
 74% of patch width, centred, with a pale-blue `#A8C7FF` blur glow. Any stray features the model
 drew inside the patch (it still sneaks hearts in) are blanked to the patch's own navy first.
 
-**Expressions (v4):** `scripts/rumi_face.py` is a vector renderer of the mark. `render("happy")`
-reproduces the logo PNG (IoU 0.85 against the real asset — sub-stroke differences only); every other
-emotion is the SAME mark with the dots reshaped and/or the connecting curve bent, and the two ends
-always stay attached to the eyes. The eye/mouth vocabulary is copied from the flat-vector robot pack
-in `grids/` (Kamal: "learn from it and use them"):
+**Expressions (v5 - the reference grammar):** Kamal supplied 17 reference renders (`reference/faces/`)
+that define the face language: kawaii eyes + mouth as SEPARATE small thin glowing glyphs (eye radius
+~6-7% of patch width, stroke ~2.5%, eyes ~50% apart, mouth ~13% below the eye line), calm and cute;
+the BODY carries the drama. The connected logo curve (`link=True`) is kept for the resting face
+`happy` (it IS the logo and must not drift) and for `heart-eyes`/`shy` where the references show it.
 
-- eyes: `dot big small lidded sad angry lookup lookdown lookside closed(^) sleep wink worried squint(><) x heart star spiral`
-- mouths: `smile laugh(open D under the curve) smirk flat frown wavy o` — the non-smile ones drop
-  straight arms from the dots and carry the expression in the centre segment, so the shape still
-  reads as the logo.
-- `FACES` maps all 54 names → (left eye, right eye, mouth). Unknown names fall back to neutral.
+`scripts/rumi_face.py` renders it: `compose(left, right, mouth, link)` from 16 eye glyphs
+(`dot[:s|:l] arch squint closed wink lidded lid:sad lid:angry dome x spiral heart star look:up/down/side`)
+and 8 mouths (`smile[:s|:m|:l] open[:s|:l] frown flat zigzag o openfrown smirk`); `FACES` maps all
+54 names. `python3 scripts/rumi_face.py out.png` prints the logo IoU of `happy` (0.85) and writes the
+54-face sheet. The reusable skill is `~/.claude/skills/rumi-face/` (mirrored in `skills/rumi-face/`).
 
-`python3 scripts/rumi_face.py out.png` prints the IoU and writes a 54-face sheet on navy for review.
-Never hand the face back to the image model — edit `FACES` or add a variant in `rumi_face.py`.
+**Bodies (v5):** `prompts/slime.json` emotions are now body-first - pose, squash/stretch, pseudopods,
+gel props and floating symbols (💢, sparks, dizzy ring, sweat + shake lines, bubbles, glitch pixels),
+never anything on the face patch. All six grids were regenerated with these.
 
 ## Splitting
 

@@ -15,7 +15,7 @@ from PIL import Image, ImageFilter
 LOGO = Path.home() / ".claude/skills/rumi-brand/assets/rumi-mark-white-smile.png"  # neutral reference; faces come from rumi_face.render
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import rumi_face
-MARK_W = 0.74      # mark width as a fraction of patch width
+MARK_W = 0.66      # eye spacing ~50% of patch width, matching the reference renders
 Y_SHIFT = -0.02    # mark centre offset (fraction of patch height); logo dots sit high
 GLOW = (168, 199, 255)  # brand pale-blue #A8C7FF
 
@@ -84,8 +84,10 @@ def paste(src, dst, logo):
     a = Image.new("L", glow.size, 0); a.paste(mark.getchannel("A"), (pad, pad))
     glow.putalpha(a.filter(ImageFilter.GaussianBlur(mw / 22)).point(lambda v: min(255, int(v * 0.9))))
     cx, cy = x0 + pw // 2, y0 + ph // 2 + int(ph * Y_SHIFT)
-    im.alpha_composite(glow, (cx - glow.width // 2, cy - mark_h // 2 - pad))
-    im.alpha_composite(mark, (cx - mark.width // 2, cy - mark_h // 2))
+    top = cy - mark_h // 2 - int(rumi_face.TOP * mw)   # renderer adds TOP headroom above the eye row
+    left = cx - mw // 2 - int(rumi_face.SIDE * mw)          # and SIDE padding beside the eyes
+    im.alpha_composite(glow, (left - pad, top - pad))
+    im.alpha_composite(mark, (left, top))
     im.save(dst)
     small = dst.parent.parent / "128"  # keep the Slack-size copies in sync with the pasted face
     if small.is_dir():
