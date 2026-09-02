@@ -1,0 +1,104 @@
+{
+  "character": "Rumi",
+  "style": "translucent-slime-3d",
+  "palette": {
+    "body": "frosted white / pale-blue #A8C7FF translucent gel",
+    "face_patch": "#001F3F",
+    "face_features": "glowing white",
+    "background": "transparent (grids: white)"
+  },
+  "grid_layout": "3x3, row-major, cell order left-to-right top-to-bottom",
+  "grids": [
+    {
+      "file": "grids-slime/grid-1-core-reactions.png",
+      "theme": "core reactions",
+      "cells": [
+        "rumi-happy",
+        "rumi-wink",
+        "rumi-wave",
+        "rumi-thumbs-up",
+        "rumi-heart-eyes",
+        "rumi-laugh",
+        "rumi-thinking",
+        "rumi-sad",
+        "rumi-celebrate"
+      ]
+    },
+    {
+      "file": "grids-slime/grid-2-work-states.png",
+      "theme": "agent work states",
+      "cells": [
+        "rumi-done",
+        "rumi-working",
+        "rumi-loading",
+        "rumi-searching",
+        "rumi-idea",
+        "rumi-writing",
+        "rumi-error",
+        "rumi-warning",
+        "rumi-blocked"
+      ]
+    },
+    {
+      "file": "grids-slime/grid-3-big-feelings.png",
+      "theme": "rest and big feelings",
+      "cells": [
+        "rumi-sleeping",
+        "rumi-low-battery",
+        "rumi-surprised",
+        "rumi-confused",
+        "rumi-shy",
+        "rumi-crying",
+        "rumi-crying-laughing",
+        "rumi-angry",
+        "rumi-nervous"
+      ]
+    },
+    {
+      "file": "grids-slime/grid-4-attitude.png",
+      "theme": "attitude and personality",
+      "cells": [
+        "rumi-smug",
+        "rumi-mind-blown",
+        "rumi-eye-roll",
+        "rumi-facepalm",
+        "rumi-cool",
+        "rumi-starstruck",
+        "rumi-salute",
+        "rumi-shrug",
+        "rumi-peek"
+      ]
+    },
+    {
+      "file": "grids-slime/grid-5-teaching.png",
+      "theme": "teaching and encouragement",
+      "cells": [
+        "rumi-teaching",
+        "rumi-graduate",
+        "rumi-clap",
+        "rumi-encourage",
+        "rumi-listening",
+        "rumi-speaking",
+        "rumi-100",
+        "rumi-trophy",
+        "rumi-book"
+      ]
+    },
+    {
+      "file": "grids-slime/grid-6-fun-extras.png",
+      "theme": "fun extras",
+      "cells": [
+        "rumi-thanks",
+        "rumi-dance",
+        "rumi-heart",
+        "rumi-reading",
+        "rumi-charging",
+        "rumi-hello",
+        "rumi-curious",
+        "rumi-proud",
+        "rumi-high-five"
+      ]
+    }
+  ],
+  "source_prompts": "prompts/slime.json"
+}

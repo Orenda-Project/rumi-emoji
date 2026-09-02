@@ -18,10 +18,12 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
-MANIFEST = json.loads((ROOT / "manifest.json").read_text())
+# usage: split_grids.py [manifest.json] [emoji-out-dir]   (defaults: flat-vector pack)
+MANIFEST = json.loads((ROOT / (sys.argv[1] if len(sys.argv) > 1 else "manifest.json")).read_text())
+OUT = ROOT / (sys.argv[2] if len(sys.argv) > 2 else "emoji")
 
 BG_MIN = 140      # flood-fill: min channel above this and near-neutral = background
-BG_SPREAD = 20
+BG_SPREAD = 20  # ponytail: 35 eats the slime's glow fringe but also hollows out bodies whose rim isn't sealed
 LABEL_BAND = 0.22  # bottom fraction of the cell that may contain label text
 MIN_AREA = 40      # drop dust smaller than this
 MARGIN = 14
@@ -123,10 +125,12 @@ def process_cell(cell, name, outdirs):
 
 
 def main():
-    outdirs = {512: ROOT / "emoji" / "512", 128: ROOT / "emoji" / "128"}
+    outdirs = {512: OUT / "512", 128: OUT / "128"}
     for d in outdirs.values():
         d.mkdir(parents=True, exist_ok=True)
     for grid in MANIFEST["grids"]:
+        if not (ROOT / grid["file"]).exists():
+            print(f"skip (missing): {grid['file']}"); continue
         im = Image.open(ROOT / grid["file"]).convert("RGB")
         w, h = im.size
         cw, ch = w // 3, h // 3

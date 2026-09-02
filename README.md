@@ -3,13 +3,19 @@
 Emoji / sticker pack for **Rumi**, the AI teaching assistant ([rumi-platform](https://github.com/Orenda-Project/rumi-platform)) —
 54 expressions of the desk-companion robot character (see [rumi-mini](https://github.com/Orenda-Project/rumi-mini) for the physical body).
 
-![Grid 1 — Core Reactions](grids/grid-1-core-reactions.jpeg)
+Two bodies, one face. The **slime pack** is the current direction (Sept 2026 team survey: keep the
+face, body becomes a cute slime that takes any shape); the **flat-vector robot pack** is the original.
+
+| Slime (current) | Flat-vector robot (original) |
+|---|---|
+| ![Slime grid 1](grids-slime/grid-1-core-reactions.png) | ![Grid 1 — Core Reactions](grids/grid-1-core-reactions.jpeg) |
 
 ## Contents
 
 | Path | What |
 |---|---|
-| `grids/` | The 6 source 3×3 grids (2048×2048 JPEG), one theme each |
+| `grids-slime/` · `emoji-slime/` · `manifest-slime.json` · `prompts/PROMPTS_SLIME.md` + `slime.json` | **Slime pack** — same 54 names, translucent gel body. `scripts/generate_slime.py` regenerates grids. |
+| `grids/` | The 6 source 3×3 grids (2048×2048 JPEG), one theme each (robot pack) |
 | `emoji/` | Individual transparent PNGs cut from the grids — `512/` full-size, `128/` Slack/Discord-ready |
 | `manifest.json` | The database: every grid → cell → emoji name, plus the palette |
 | `prompts/PROMPTS.md` | The exact generation prompts (shared character block + per-grid emotions) — reuse verbatim to regenerate or extend |
@@ -38,7 +44,10 @@ Discord: Server Settings → Emoji → upload (≤256KB).
 
 ## Regenerating / extending
 
-Everything needed is in `prompts/PROMPTS.md` — keep the shared character paragraph and negative
+Slime pack: `python3 scripts/generate_slime.py [grid numbers]` then
+`python3 scripts/split_grids.py manifest-slime.json emoji-slime` — see `prompts/PROMPTS_SLIME.md`.
+
+Robot pack: everything needed is in `prompts/PROMPTS.md` — keep the shared character paragraph and negative
 prompt verbatim and only swap the 9 emotion descriptions (or the style phrase, for pixel/duotone
 variants). Generated with an AI image model at 2K; grids are the source of truth, `emoji/` is
 derived output.
