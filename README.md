@@ -21,11 +21,18 @@ Upload the PNGs from **`emoji-slime-v6/128/`** — names are already Slack-style
 Slack custom emoji: workspace admin → Customize → Emoji → upload (≤128KB each, these fit).
 Discord: Server Settings → Emoji → upload (≤256KB). `emoji-slime-v6/512/` has the full-size versions.
 
+## Meme stickers
+
+Caption + emoji = sticker. 40 office/AI/desi one-liners on v6 bodies, WhatsApp/Telegram-ready. See [`stickers/README.md`](stickers/README.md) for the pack and how to add more.
+
+![Stickers](stickers/rumi-office-v1/preview.png)
+
 ## Contents
 
 | Path | What |
 |---|---|
 | `grids-slime-v6/` · `emoji-slime-v6/` · `manifest-slime-v6.json` · `prompts/PROMPTS_SLIME_V6.md` + `slime_v6.json` · `preview-slime-v6.png` | **Slime pack v6 (current).** 6 source grids (2048×2048), 54 transparent PNGs in `512/` + `128/`, the grid→cell→name database, and the exact prompts. `grids-slime-v6/v6.0/` = the first pass that was too uniform (kept as a before/after). |
+| `stickers/` · `scripts/make_stickers.py` | **Meme stickers** — `pack.json` (text + emoji per sticker) → `make_stickers.py` → 512px PNG + WebP + preview. |
 | `reference/faces/gemini-9-*.jpeg` | The quality bar v6 was built to match: 4 Gemini reference grids Kamal approved (2026-09-02). The 17 `ref-*.jpeg` files are the earlier face-glyph references. |
 | `grids-slime/` · `emoji-slime/` · `manifest-slime.json` · `prompts/PROMPTS_SLIME.md` + `slime.json` · `grids-slime-blank/` | **Slime pack v5 (superseded).** Same 54 names, same pale-blue body in every cell, face = vector logo mark composited on by `scripts/paste_face.py` / `scripts/rumi_face.py`. Kept for history; too uniform to ship. |
 | `skills/rumi-face/` | Claude skill: compose a Rumi face from eye + mouth glyphs and put it on a body (v5 pipeline). |

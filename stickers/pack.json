@@ -1,0 +1,207 @@
+{
+ "pack": "rumi-office-v1",
+ "size": 512,
+ "source": "personal-agent-v2/vault/content/sticker-pack-text.md (Parts B, C)",
+ "stickers": [
+  {
+   "file": "on-it.png",
+   "text": "On it",
+   "emoji": "rumi-salute"
+  },
+  {
+   "file": "noted.png",
+   "text": "Noted",
+   "emoji": "rumi-listening"
+  },
+  {
+   "file": "lgtm.png",
+   "text": "LGTM",
+   "emoji": "rumi-done"
+  },
+  {
+   "file": "ship-it.png",
+   "text": "Ship it",
+   "emoji": "rumi-celebrate"
+  },
+  {
+   "file": "wip.png",
+   "text": "WIP",
+   "emoji": "rumi-working"
+  },
+  {
+   "file": "blocked.png",
+   "text": "Blocked",
+   "emoji": "rumi-blocked"
+  },
+  {
+   "file": "in-review.png",
+   "text": "In review",
+   "emoji": "rumi-thinking"
+  },
+  {
+   "file": "waiting-on-review.png",
+   "text": "Waiting on review",
+   "emoji": "rumi-loading"
+  },
+  {
+   "file": "under-investigation.png",
+   "text": "Under investigation",
+   "emoji": "rumi-searching"
+  },
+  {
+   "file": "rolled-back.png",
+   "text": "Rolled back",
+   "emoji": "rumi-facepalm"
+  },
+  {
+   "file": "merged.png",
+   "text": "Merged",
+   "emoji": "rumi-clap"
+  },
+  {
+   "file": "live-now.png",
+   "text": "Live now",
+   "emoji": "rumi-hello"
+  },
+  {
+   "file": "deployed.png",
+   "text": "Deployed",
+   "emoji": "rumi-proud"
+  },
+  {
+   "file": "ooo.png",
+   "text": "OOO",
+   "emoji": "rumi-sleeping"
+  },
+  {
+   "file": "heads-down.png",
+   "text": "Heads down",
+   "emoji": "rumi-writing"
+  },
+  {
+   "file": "logging-off.png",
+   "text": "Logging off",
+   "emoji": "rumi-low-battery"
+  },
+  {
+   "file": "weekend-mode.png",
+   "text": "Weekend mode",
+   "emoji": "rumi-cool"
+  },
+  {
+   "file": "prod-is-down.png",
+   "text": "Prod is down",
+   "emoji": "rumi-angry"
+  },
+  {
+   "file": "this-is-fine.png",
+   "text": "This is fine",
+   "emoji": "rumi-nervous"
+  },
+  {
+   "file": "who-touched-prod.png",
+   "text": "Who touched prod?",
+   "emoji": "rumi-eye-roll"
+  },
+  {
+   "file": "rollback.png",
+   "text": "Rollback!",
+   "emoji": "rumi-error"
+  },
+  {
+   "file": "it-s-always-dns.png",
+   "text": "It's always DNS",
+   "emoji": "rumi-crying-laughing"
+  },
+  {
+   "file": "big-win-team.png",
+   "text": "Big win team",
+   "emoji": "rumi-trophy"
+  },
+  {
+   "file": "zero-bugs-today.png",
+   "text": "Zero bugs today",
+   "emoji": "rumi-starstruck"
+  },
+  {
+   "file": "green-build.png",
+   "text": "Green build!",
+   "emoji": "rumi-100"
+  },
+  {
+   "file": "just-following-up.png",
+   "text": "Just following up",
+   "emoji": "rumi-peek"
+  },
+  {
+   "file": "friendly-reminder.png",
+   "text": "Friendly reminder :)",
+   "emoji": "rumi-wink"
+  },
+  {
+   "file": "kindly-revert.png",
+   "text": "Kindly revert",
+   "emoji": "rumi-shy"
+  },
+  {
+   "file": "my-agent-is-in-a-loop-again.png",
+   "text": "My agent is in a loop again",
+   "emoji": "rumi-confused"
+  },
+  {
+   "file": "kamil-is-typing.png",
+   "text": "Kamil is typing...",
+   "emoji": "rumi-idea"
+  },
+  {
+   "file": "escalated-to-human-eventually.png",
+   "text": "Escalated to human, eventually",
+   "emoji": "rumi-shrug"
+  },
+  {
+   "file": "context-window-s-full.png",
+   "text": "Context window's full",
+   "emoji": "rumi-mind-blown"
+  },
+  {
+   "file": "delegated-to-my-agent.png",
+   "text": "Delegated to my agent",
+   "emoji": "rumi-thumbs-up"
+  },
+  {
+   "file": "rate-limited-by-my-own-ambition.png",
+   "text": "Rate limited by my own ambition",
+   "emoji": "rumi-warning"
+  },
+  {
+   "file": "ho-jayega-tension-na-lo.png",
+   "text": "Ho jayega, tension na lo",
+   "emoji": "rumi-encourage"
+  },
+  {
+   "file": "deadline-kal-hai.png",
+   "text": "Deadline kal hai",
+   "emoji": "rumi-surprised"
+  },
+  {
+   "file": "weekend-pe-kaam.png",
+   "text": "Weekend pe kaam?",
+   "emoji": "rumi-crying"
+  },
+  {
+   "file": "bhai-scene-kya-hai.png",
+   "text": "Bhai scene kya hai",
+   "emoji": "rumi-curious"
+  },
+  {
+   "file": "chai-break.png",
+   "text": "Chai break",
+   "emoji": "rumi-reading"
+  },
+  {
+   "file": "kal-pakka.png",
+   "text": "Kal pakka",
+   "emoji": "rumi-heart-eyes"
+  }
+ ]
+}
