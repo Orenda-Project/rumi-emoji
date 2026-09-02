@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate the slime-body Rumi emoji grids (prompts/slime.json) via Gemini nano-banana-pro.
 
-usage: python3 scripts/generate_slime.py [1 2 ...]   # grid numbers; default all
+usage: python3 scripts/generate_slime.py [--prompts prompts/slime.json] [1 2 ...]   # grid numbers; default all
 Skips grids whose output file already exists. Needs GEMINI_API_KEY (env, or
 personal-agent-v2/.env as fallback).
 """
@@ -18,8 +18,12 @@ if not KEY:
     sys.exit("GEMINI_API_KEY not set")
 
 URL = f"https://generativelanguage.googleapis.com/v1beta/models/nano-banana-pro-preview:generateContent?key={KEY}"
-data = json.loads((ROOT / "prompts" / "slime.json").read_text())
-only = {int(a) for a in sys.argv[1:]}
+args = sys.argv[1:]
+PROMPTS = "prompts/slime.json"
+if args[:1] == ["--prompts"]:
+    PROMPTS, args = args[1], args[2:]
+data = json.loads((ROOT / PROMPTS).read_text())
+only = {int(a) for a in args}
 
 for i, g in enumerate(data["grids"], 1):
     if only and i not in only:
@@ -31,7 +35,7 @@ for i, g in enumerate(data["grids"], 1):
     out.parent.mkdir(parents=True, exist_ok=True)
     k = "_blank" if data.get("blank_face") else ""  # blank-face mode: logo pasted on later by scripts/paste_face.py
     text = (f"{data['opening'+k]}\n\nThe 9 emotions: {g['emotions']}\n\n{data['closing'+k]}\n\n"
-            f"Avoid: {data['negative'+k]}")
+            + (f"Avoid: {data['negative'+k]}" if 'negative'+k in data else ""))
     parts = [{"text": text}]
     if data.get("reference_image"):  # logo mark as image input - never describe the logo in prose
         img_b64 = base64.b64encode(pathlib.Path(data["reference_image"]).read_bytes()).decode()

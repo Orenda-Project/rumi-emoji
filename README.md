@@ -17,7 +17,8 @@ frown, x-eyes…) while the ends stay attached, and `scripts/paste_face.py` comp
 
 | Path | What |
 |---|---|
-| `grids-slime/` · `emoji-slime/` · `manifest-slime.json` · `prompts/PROMPTS_SLIME.md` + `slime.json` | **Slime pack** — same 54 names, translucent gel body, logo-language face. `grids-slime-blank/` = raw faceless model output the pipeline starts from (not for viewing). |
+| `grids-slime-v6/` · `emoji-slime-v6/` · `manifest-slime-v6.json` · `prompts/PROMPTS_SLIME_V6.md` + `slime_v6.json` | **Slime pack v6 (current)** — same 54 names, every cell a different body: material, colour and silhouette change with the emotion (lava, stone, gold, galaxy, rain cloud, hourglass, battery…), face stays small on the navy plate. Preview: `preview-slime-v6.png`. Reference bar: `reference/faces/gemini-9-*.jpeg`. |
+| `grids-slime/` · `emoji-slime/` · `manifest-slime.json` · `prompts/PROMPTS_SLIME.md` + `slime.json` | **Slime pack v5** — same 54 names, translucent gel body, logo-language face. `grids-slime-blank/` = raw faceless model output the pipeline starts from (not for viewing). |
 | `skills/rumi-face/` | **Claude skill**: compose ANY Rumi expression from eye + mouth glyphs and put it on a body. `reference/faces/` = the 17 approved reference renders. |
 | `grids/` | The 6 source 3×3 grids (2048×2048 JPEG), one theme each (robot pack) |
 | `emoji/` | Individual transparent PNGs cut from the grids — `512/` full-size, `128/` Slack/Discord-ready |

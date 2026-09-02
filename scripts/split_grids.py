@@ -22,9 +22,9 @@ ROOT = Path(__file__).resolve().parent.parent
 MANIFEST = json.loads((ROOT / (sys.argv[1] if len(sys.argv) > 1 else "manifest.json")).read_text())
 OUT = ROOT / (sys.argv[2] if len(sys.argv) > 2 else "emoji")
 
-BG_MIN = 140      # flood-fill: min channel above this and near-neutral = background
+BG_MIN = int(__import__("os").environ.get("BG_MIN", 140))  # flood-fill: min channel above this and near-neutral = background (env override for near-white bodies)
 BG_SPREAD = 20  # ponytail: 35 eats the slime's glow fringe but also hollows out bodies whose rim isn't sealed
-LABEL_BAND = 0.22  # bottom fraction of the cell that may contain label text
+LABEL_BAND = float(__import__("os").environ.get("LABEL_BAND", 0.22))  # bottom fraction that may hold label text (env override: grey bodies get eaten by the eraser)
 MIN_AREA = 40      # drop dust smaller than this
 MARGIN = 14
 
