@@ -23,7 +23,7 @@ Discord: Server Settings → Emoji → upload (≤256KB). `emoji-slime-v6/512/` 
 
 ## Meme stickers
 
-Caption + emoji = sticker. 40 office/AI/desi one-liners on v6 bodies, WhatsApp/Telegram-ready. See [`stickers/README.md`](stickers/README.md) for the pack and how to add more.
+Caption + emoji = sticker. 41 office/AI/desi one-liners on v6 bodies, WhatsApp/Telegram-ready. See [`stickers/README.md`](stickers/README.md) for the pack and how to add more.
 
 ![Stickers](stickers/rumi-office-v1/preview.png)
 

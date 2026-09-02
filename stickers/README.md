@@ -9,7 +9,7 @@ Made for Slack, WhatsApp and Telegram. The emoji carry the emotion, the text car
 
 | Pack | What | Count |
 |---|---|---|
-| `rumi-office-v1/` | Office shorthand (On it, LGTM, Blocked, Prod is down…), AI-coworker lines (My agent is in a loop again, Kamil is typing…), desi office (Ho jayega tension na lo, Kal pakka, Chai break) | 40 |
+| `rumi-office-v1/` | Office shorthand (On it, LGTM, Blocked, Prod is down…), AI-coworker lines (My agent is in a loop again, Kamil is typing…), desi office (Ho jayega tension na lo, Kal pakka, Chai break, Aj ma tahalka omelette banu ga) | 41 |
 
 Each pack folder has `png/` (512×512, Slack/Telegram), `webp/` (512×512 under 100KB, WhatsApp) and `preview.png`.
 
