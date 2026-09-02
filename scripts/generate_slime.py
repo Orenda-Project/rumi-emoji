@@ -29,9 +29,14 @@ for i, g in enumerate(data["grids"], 1):
         print(f"skip (exists): {out.name}")
         continue
     out.parent.mkdir(parents=True, exist_ok=True)
-    text = (f"{data['opening']}\n\nThe 9 emotions: {g['emotions']}\n\n{data['closing']}\n\n"
-            f"Avoid: {data['negative']}")
-    payload = json.dumps({"contents": [{"parts": [{"text": text}]}],
+    k = "_blank" if data.get("blank_face") else ""  # blank-face mode: logo pasted on later by scripts/paste_face.py
+    text = (f"{data['opening'+k]}\n\nThe 9 emotions: {g['emotions']}\n\n{data['closing'+k]}\n\n"
+            f"Avoid: {data['negative'+k]}")
+    parts = [{"text": text}]
+    if data.get("reference_image"):  # logo mark as image input - never describe the logo in prose
+        img_b64 = base64.b64encode(pathlib.Path(data["reference_image"]).read_bytes()).decode()
+        parts = [{"text": data["reference_role"]}, {"inlineData": {"mimeType": "image/png", "data": img_b64}}] + parts
+    payload = json.dumps({"contents": [{"parts": parts}],
                           "generationConfig": {"imageConfig": {"aspectRatio": "1:1", "imageSize": "2K"}}})
     print(f"generating grid {i} - {g['theme']} ...")
     r = subprocess.run(["curl", "-s", "-X", "POST", URL, "-H", "Content-Type: application/json", "-d", "@-"],

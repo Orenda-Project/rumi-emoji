@@ -1,4 +1,4 @@
-# Rumi Emoji — Slime Body (v1)
+# Rumi Emoji — Slime Body (v3: rendered body + pasted logo face)
 
 Second character body for the same 54 emotions: a cute translucent slime that can take any shape.
 Chosen after the September 2026 team survey (see the Rumi Survey Deck): **the face is locked**
@@ -22,7 +22,7 @@ too-dark v3.
 | | Flat-vector pack | Slime pack |
 |---|---|---|
 | Body | white egg head + pill body + paddle arms (EVE-like) | one frosted white/pale-blue translucent gel blob, teardrop at rest |
-| Face | navy visor | navy rounded face patch |
+| Face | navy visor, model-drawn eyes+smile | navy rounded face patch with the REAL logo mark composited on (see below) |
 | Gestures | paddle arms | gel **pseudopods** stretched out of the body, or the whole body reshaping (heart, lightbulb, slumped, stretched tall) |
 | Render | flat vector, Apple-emoji gloss | Pixar-style 3D gel render, soft studio light, no floor/shadow |
 | Antenna | glowing tip | tip of the blob glows brighter instead |
@@ -47,10 +47,29 @@ what keeps the character consistent. Only swap the 9 emotion descriptions.
 Model: Gemini `nano-banana-pro-preview`, 1:1, 2K. Regenerate one grid with
 `python3 scripts/generate_slime.py 3` (delete the existing PNG first; the script skips existing files).
 
+## The face is the logo — pasted, not generated (v3)
+
+v1 let the model draw the face; the eyes and mouth came out as generic emoji features, not the
+Rumi mark. v2 tried the logo as a reference image + a "connected dots-and-smile" rule: 5/9 cells
+matched on one roll, 0/9 on the next — a coin flip on exactly the detail that is the brand.
+
+So v3 splits the job: the model renders the slime body with an **empty navy face patch**
+(`opening_blank` / `closing_blank` / `negative_blank` in `slime.json`, `blank_face: true`), and
+`scripts/paste_face.py` composites the **actual logo PNG**
+(`rumi-brand/assets/rumi-mark-white-smile.png`) onto the patch: largest navy blob → bbox → mark at
+74% of patch width, centred, with a pale-blue `#A8C7FF` blur glow. Any stray features the model
+drew inside the patch (it still sneaks hearts in) are blanked to the patch's own navy first.
+
+Consequence: the face is identical on all 54 emoji — literally the survey's "the face is locked".
+Emotion is carried by body pose, pseudopods, props, glow and floating symbols. If a per-emotion
+face variant is ever wanted (frown for `sad`, x-eyes for `error`), draw it as a *vector variant of
+the mark* in `paste_face.py` — never hand it back to the image model.
+
 ## Splitting
 
 ```
 python3 scripts/split_grids.py manifest-slime.json emoji-slime
+python3 scripts/paste_face.py emoji-slime/512          # in place; refreshes emoji-slime/128 too
 ```
 
 The existing splitter worked unchanged: the pale-blue tinted rim asked for in the prompt is
@@ -63,8 +82,8 @@ line (the "Props rule" sentence appended to those grids' emotions). Any new prop
 
 Don't widen `BG_SPREAD` to kill the glow fringe: 35 hollowed out `rumi-happy` (rim not sealed).
 
-## Known nits (v1)
+## Known nits
 
-- `rumi-wave`: two tiny gel beads under the body (the model's idea of motion) — acceptable at 128px.
+- Faces are identical by design; `rumi-sad`, `rumi-angry`, `rumi-error` etc. smile too — body pose carries the emotion. Vector mark variants are the upgrade path.
 - `rumi-idea`, `rumi-charging`: faint jagged outer-glow fringe survives the cut. Visible at 512, not at 128.
 - `preview.png` is the 54-emoji contact sheet on gray for quick review.

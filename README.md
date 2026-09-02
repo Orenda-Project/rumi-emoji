@@ -5,6 +5,8 @@ Emoji / sticker pack for **Rumi**, the AI teaching assistant ([rumi-platform](ht
 
 Two bodies, one face. The **slime pack** is the current direction (Sept 2026 team survey: keep the
 face, body becomes a cute slime that takes any shape); the **flat-vector robot pack** is the original.
+On the slime pack the face is the actual Rumi logo mark (two dots joined by a smile), composited
+onto the rendered body by `scripts/paste_face.py` — identical on every emoji, by design.
 
 | Slime (current) | Flat-vector robot (original) |
 |---|---|
@@ -44,8 +46,9 @@ Discord: Server Settings → Emoji → upload (≤256KB).
 
 ## Regenerating / extending
 
-Slime pack: `python3 scripts/generate_slime.py [grid numbers]` then
-`python3 scripts/split_grids.py manifest-slime.json emoji-slime` — see `prompts/PROMPTS_SLIME.md`.
+Slime pack: `python3 scripts/generate_slime.py [grid numbers]` →
+`python3 scripts/split_grids.py manifest-slime.json emoji-slime` →
+`python3 scripts/paste_face.py emoji-slime/512` — see `prompts/PROMPTS_SLIME.md`.
 
 Robot pack: everything needed is in `prompts/PROMPTS.md` — keep the shared character paragraph and negative
 prompt verbatim and only swap the 9 emotion descriptions (or the style phrase, for pixel/duotone
