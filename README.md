@@ -5,8 +5,9 @@ Emoji / sticker pack for **Rumi**, the AI teaching assistant ([rumi-platform](ht
 
 Two bodies, one face. The **slime pack** is the current direction (Sept 2026 team survey: keep the
 face, body becomes a cute slime that takes any shape); the **flat-vector robot pack** is the original.
-On the slime pack the face is the actual Rumi logo mark (two dots joined by a smile), composited
-onto the rendered body by `scripts/paste_face.py` — identical on every emoji, by design.
+On the slime pack the face is the Rumi logo mark (two dots joined by a smile) rendered as vectors by
+`scripts/rumi_face.py` — each emotion reshapes the dots / bends the curve (heart eyes, `><` laugh,
+frown, x-eyes…) while the ends stay attached, and `scripts/paste_face.py` composites it onto the body.
 
 | Slime (current) | Flat-vector robot (original) |
 |---|---|

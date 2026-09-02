@@ -1,4 +1,4 @@
-# Rumi Emoji — Slime Body (v3: rendered body + pasted logo face)
+# Rumi Emoji — Slime Body (v4: rendered body + vector logo-mark face with expressions)
 
 Second character body for the same 54 emotions: a cute translucent slime that can take any shape.
 Chosen after the September 2026 team survey (see the Rumi Survey Deck): **the face is locked**
@@ -60,10 +60,20 @@ So v3 splits the job: the model renders the slime body with an **empty navy face
 74% of patch width, centred, with a pale-blue `#A8C7FF` blur glow. Any stray features the model
 drew inside the patch (it still sneaks hearts in) are blanked to the patch's own navy first.
 
-Consequence: the face is identical on all 54 emoji — literally the survey's "the face is locked".
-Emotion is carried by body pose, pseudopods, props, glow and floating symbols. If a per-emotion
-face variant is ever wanted (frown for `sad`, x-eyes for `error`), draw it as a *vector variant of
-the mark* in `paste_face.py` — never hand it back to the image model.
+**Expressions (v4):** `scripts/rumi_face.py` is a vector renderer of the mark. `render("happy")`
+reproduces the logo PNG (IoU 0.85 against the real asset — sub-stroke differences only); every other
+emotion is the SAME mark with the dots reshaped and/or the connecting curve bent, and the two ends
+always stay attached to the eyes. The eye/mouth vocabulary is copied from the flat-vector robot pack
+in `grids/` (Kamal: "learn from it and use them"):
+
+- eyes: `dot big small lidded sad angry lookup lookdown lookside closed(^) sleep wink worried squint(><) x heart star spiral`
+- mouths: `smile laugh(open D under the curve) smirk flat frown wavy o` — the non-smile ones drop
+  straight arms from the dots and carry the expression in the centre segment, so the shape still
+  reads as the logo.
+- `FACES` maps all 54 names → (left eye, right eye, mouth). Unknown names fall back to neutral.
+
+`python3 scripts/rumi_face.py out.png` prints the IoU and writes a 54-face sheet on navy for review.
+Never hand the face back to the image model — edit `FACES` or add a variant in `rumi_face.py`.
 
 ## Splitting
 
@@ -89,6 +99,6 @@ Don't widen `BG_SPREAD` to kill the glow fringe: 35 hollowed out `rumi-happy` (r
 
 ## Known nits
 
-- Faces are identical by design; `rumi-sad`, `rumi-angry`, `rumi-error` etc. smile too — body pose carries the emotion. Vector mark variants are the upgrade path.
+- Some work-state faces are deliberately subtle (`working`/`loading` = flat mouth) — the floating icon carries them.
 - `rumi-idea`, `rumi-charging`: faint jagged outer-glow fringe survives the cut. Visible at 512, not at 128.
 - `preview.png` is the 54-emoji contact sheet on gray for quick review.
