@@ -21,6 +21,14 @@ Names are Slack-style already: `rumi-mark`, `rumi-mark-santa`, `rumi-mark-lol`, 
 - Discord: Server Settings → Emoji → upload.
 - The `512/` folders hold full-size versions for stickers, docs and slides.
 
+## Meme stickers
+
+Company meme stickers in the same language: navy-ink stick-figure webcomic, head = the mark, one caption,
+white die-cut. Captions from the sticker text bank, bodies from Gemini with the mark as a reference image.
+See [`memes/README.md`](memes/README.md) for the exact process.
+
+![Meme stickers](memes/preview.png)
+
 ## Animated (Lottie)
 
 `lottie-mark/` has one animation per emotion (58), `lottie/` the 12 originals with props. Real keyframes,
@@ -70,6 +78,7 @@ cricket): a sibling script importing the same primitives. Full glyph list in
 | `emoji-mark/` · `preview-mark.png` | The 12 originals from Kamal's "World of Rumi" sheet: mark, tongue, santa, sparkle, sad, angry, chef, tie, crying, thinking, sleeping, grin. `512/` + `128/`. |
 | `emoji-mark-emotions/` · `preview-mark-emotions.png` | 58 more emotions in the same grammar: positive, surprise/thinking, negative, work states. |
 | `lottie-meeting/` · `scripts/make_lottie_meeting.py` | **Meeting presence** — 12 call-bot states (listening, speaking, thinking…) as Lottie + GIF. |
+| `memes/` · `scripts/generate_memes.py` | Ink webcomic meme stickers (Gemini + mark reference), 10 in the first batch. |
 | `lottie-mark/` · `lottie/` | Lottie animations of the above (`scripts/make_lottie_mark.py`, `make_lottie_v2.py`, `rumi_mark_rig.py`, `rumi_rig.py`). |
 | `scripts/logo_mark_pack.py` · `logo_mark_emotions.py` · `mark_cli.py` | The renderer: logo-measured geometry, glyph library, CLI. |
 | `skills/rumi-logo-mark-emoji/` | Claude skill: grammar, rules, vocabulary, renderer copies. |

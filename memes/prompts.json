@@ -1,0 +1,59 @@
+{
+  "model": "nano-banana-pro-preview",
+  "reference_image": "memes/face-reference.png",
+  "reference_role": "REFERENCE IMAGE = the character's FACE, exactly as drawn: two solid round dots (eyes) joined by one single smile curve (mouth). This IS the character's head - there is no head outline, no circle, no nose, no eyebrows, no pupils, no extra facial features. Reproduce these two dots and the connecting curve faithfully in every image, the same relative size and spacing, drawn in the same ink as the body. Only the props and the body change; the face never changes except where the scene says so. CRITICAL: do NOT draw a circle, oval or outline for the head. Where a stick figure's head would be there is only empty white space containing the two dots and the curve, exactly like the reference. A head circle is a failed image.",
+  "style": "Minimalist hand-drawn stick figure webcomic sticker, bold deep-navy ink line art (#0B2545, no black, no other colours except a single tiny accent when named), doodle aesthetic, isolated on a solid white background, cartoon motion lines, hand-drawn text caption in the same navy ink, relatable sarcastic office humor, clean die-cut sticker design with a thick white border, high contrast, 2D vector graphic. The character 'Rumi' is a simple stick figure whose head is ONLY the reference face (two dots + one smile curve floating where the head would be). Pure #FFFFFF white background edge to edge (not grey, not off-white). Square 1:1 composition, character large and centered, caption in a clear hand-lettered style either above or below, spelled EXACTLY as given, nothing else written anywhere.",
+  "negative": "no head circle, no extra eyes, no pupils, no eyebrows, no nose, no teeth, no realistic shading, no grey fills, no gradients, no colours other than navy ink on white (plus the one named accent), no speech bubble unless named, no logos, no watermark, no misspelled or extra words, no border cropping.",
+  "stickers": [
+    {
+      "id": "hallucinating",
+      "text": "Is my agent hallucinating?",
+      "scene": "Rumi hunched at a laptop, one hand on the head, a big hand-drawn question mark above, small sweat drop beside the face; the laptop screen shows a tiny smiling robot face."
+    },
+    {
+      "id": "email",
+      "text": "This meeting could've been an email",
+      "scene": "Rumi slumped in a chair at a long table, arms hanging, a little clock on the wall, three tiny zzz above; the face is the reference face but the smile curve is flat (a straight line)."
+    },
+    {
+      "id": "my-machine",
+      "text": "Works on my machine",
+      "scene": "Rumi shrugging with both palms up next to a laptop, while a small server box behind is on fire with hand-drawn flames (flames are the ONE accent colour: coral #E8746A)."
+    },
+    {
+      "id": "prod-fine",
+      "text": "Merged to prod. It's fine.",
+      "scene": "Rumi calmly sipping from a mug, sitting cross-legged, with hand-drawn flames rising around the room (flames are the ONE accent colour: coral #E8746A); face is the reference smile."
+    },
+    {
+      "id": "per-my-last",
+      "text": "Per my last email...",
+      "scene": "Rumi typing on a laptop with exaggerated speed lines from the fingers, chin slightly raised, one tiny sparkle beside the face; the smile curve is a small smirk."
+    },
+    {
+      "id": "kal-pakka",
+      "text": "Kal pakka",
+      "scene": "Rumi lying flat on the floor giving a lazy thumbs up, a small deadline calendar page floating above with a cross on today."
+    },
+    {
+      "id": "chai-break",
+      "text": "Chai break?",
+      "scene": "Rumi holding out two steaming cups of tea toward the viewer, little steam swirls, one tiny heart above the face."
+    },
+    {
+      "id": "absolutely-right",
+      "text": "You're absolutely right!",
+      "scene": "Rumi bowing deeply with both arms straight out, a tiny robot antenna on top where the head would be, small radiating lines of enthusiasm; caption in a speech bubble."
+    },
+    {
+      "id": "happy-friday",
+      "text": "Happy Friday, everyone!",
+      "scene": "Rumi with both arms thrown up, tiny confetti dashes and stars around, a laptop lid being slammed shut with motion lines."
+    },
+    {
+      "id": "ghosted",
+      "text": "Ghosted. Even by the bot.",
+      "scene": "Rumi staring at a phone showing 'seen' with two tiny ticks, shoulders dropped, a small tumbleweed rolling past; the face is the reference face with a small frown instead of the smile."
+    }
+  ]
+}
