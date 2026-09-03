@@ -9,7 +9,7 @@
 Needs GEMINI_API_KEY (env or personal-agent-v2/.env). Skips ids whose raw file already exists.
 """
 import base64, json, os, pathlib, subprocess, sys, time
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageOps
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 KEY = os.environ.get("GEMINI_API_KEY")
@@ -63,11 +63,14 @@ def sheet():
     sh = Image.new("RGB", (cols * cell, -(-len(ids) // cols) * cell), "white"); dr = ImageDraw.Draw(sh)
     for i, sid in enumerate(ids):
         im = Image.open(RAW / f"{sid}.png").convert("RGBA")
-        px = im.load(); w, h = im.size                      # ponytail: near-white -> transparent, good enough for die-cut
-        for y in range(h):
-            for x in range(w):
-                r, g, b, a = px[x, y]
-                if r > 235 and g > 235 and b > 235: px[x, y] = (255, 255, 255, 0)
+        # die-cut: only the background connected to the image border becomes transparent; white INSIDE the
+        # sticker stays white (otherwise badge interiors show dark on dark chat themes and confuse cut lines)
+        lum = im.convert("L")
+        bordered = ImageOps.expand(lum, 1, lum.getpixel((2, 2)))   # frame in the background colour so the flood starts outside
+        ImageDraw.floodfill(bordered, (0, 0), 1, thresh=10)          # thresh 10: eats grey-tinted backgrounds (241-247), stops at anti-aliased ink
+        outside = bordered.crop((1, 1, bordered.width - 1, bordered.height - 1)).point(lambda v: 255 if v == 1 else 0)
+        alpha = Image.eval(outside, lambda v: 255 - v)
+        im.putalpha(alpha)
         im.save(PNG / f"rumi-meme-{sid}.png")
         x, y = (i % cols) * cell, (i // cols) * cell
         flat = Image.new("RGBA", im.size, "white"); flat.alpha_composite(im)   # preview shows the die-cut result, not the raw

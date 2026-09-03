@@ -22,7 +22,7 @@ Company meme stickers in the "World of Rumi" language: a hand-drawn navy-ink sti
 4. **Scenes** are one sentence each in `prompts.json` — body language + one or two props + which mouth
    variant (smile / flat / smirk / frown). The model draws the caption itself (part of the style); all ten
    came out spelled correctly at 1K.
-5. **Die-cut**: `generate_memes.py --sheet` turns near-white (>235) to transparent → `png/rumi-meme-<id>.png`
+5. **Die-cut**: `generate_memes.py --sheet` flood-fills the background from the image border (tolerance 10, so grey-tinted backgrounds go too) to transparent; white *inside* a badge stays white → `png/rumi-meme-<id>.png`
    and rebuilds `preview.png` from the cut versions. `raw/` keeps the untouched Gemini output.
 
 ## Batches
@@ -34,6 +34,10 @@ Company meme stickers in the "World of Rumi" language: a hand-drawn navy-ink sti
 - [`laptop/`](laptop/README.md): 15 laptop identity badges (round / shield / ribbon), **2K** for print.
 
 73 stickers total across the four batches. Set `"imageSize": "2K"` in a batch's `prompts.json` for print-grade output (1K is fine for chat).
+
+## Print
+
+[`print/`](print/README.md): A4 300-DPI PDFs per batch and combined, 55 mm (12/page) and 60 mm (8/page) laptop sizes, grey die-cut line 2 mm around each sticker, crop marks, printing and cutting instructions.
 
 ## Files
 
