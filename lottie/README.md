@@ -48,7 +48,7 @@ group with the anchor at the pivot, register it in `EMOTIONS`, rerun, then check
 - **Web:** `lottie.loadAnimation({container, renderer:'svg', loop:true, autoplay:true, path:'rumi-wink.json'})`
 - **Flutter:** `Lottie.asset('assets/lottie/rumi-happy.json')`
 - **LottieFiles / After Effects:** import the JSON directly.
-- **Recolour:** colours are stored as `[r,g,b]` floats. Navy `#001240` = `[0, 0.071, 0.251]`; search `0.071,0.251` and replace.
+- **Recolour:** colours are stored as `[r,g,b]` floats. Navy `#001F3F` = `[0, 0.122, 0.247]`; search `0.122,0.247` and replace.
 
 ## Known limits
 

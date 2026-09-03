@@ -14,7 +14,7 @@ W, H = 160, 100
 LX, RX, EY = 44, 116, 36
 R = 10
 SW = 6
-NAVY = objects.Color(0, 18 / 255, 64 / 255)
+NAVY = objects.Color(0, 31 / 255, 63 / 255)   # brand navy #001F3F
 RED = objects.Color(0x8A / 255, 0x1C / 255, 0x1C / 255)
 
 

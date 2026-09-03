@@ -1,6 +1,6 @@
 # Rumi mark — 58 Lottie states
 
-Every emoji in `emoji-mark-emotions/` as a Lottie animation, same 512 canvas, same geometry, same navy `#0B2545`,
+Every emoji in `emoji-mark-emotions/` as a Lottie animation, same 512 canvas, same geometry, brand navy `#001F3F`,
 so a static PNG and its animation are interchangeable. 3–9 KB each.
 
 Open `preview.html` to watch all of them (lottie-web from cdnjs).
