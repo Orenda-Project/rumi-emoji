@@ -72,8 +72,8 @@ an = parse_tgs(str(out)); frames = []; step = 2   # 15 fps
 S = pathlib.Path("/tmp/claude-1000/-home-oye-Documents-free-work-personal-agent-v2/86f75a27-a4bc-4707-a86e-5f7be5d06b93/scratchpad") if pathlib.Path("/tmp/claude-1000").exists() else pathlib.Path("/tmp")
 for fr in range(0, int(an.out_point), step):
     with open(S / "_sr.png", "wb") as fh: export_png(an, fh, frame=fr)
-    im = Image.open(S / "_sr.png").convert("RGBA").crop((56, 96, 456, 356))       # 400x260, tight to mark + props
-    bg = Image.new("RGBA", im.size, (255, 255, 255, 255)); bg.alpha_composite(im); frames.append(bg.convert("RGB").resize((640, 416), Image.LANCZOS))   # white: blends with GitHub light
+    im = Image.open(S / "_sr.png").convert("RGBA")                                   # full 512 canvas, no crop
+    bg = Image.new("RGBA", im.size, (255, 255, 255, 255)); bg.alpha_composite(im); frames.append(bg.convert("RGB"))   # white: blends with GitHub light
 frames[0].save(OUT / "showreel.gif", save_all=True, append_images=frames[1:], duration=int(1000 / 15), loop=0, optimize=True)
 frames[0].save(OUT / "showreel.webp", save_all=True, append_images=frames[1:], duration=int(1000 / 15), loop=0, quality=80, method=6)
 print("gif", (OUT / "showreel.gif").stat().st_size // 1024, "KB; webp", (OUT / "showreel.webp").stat().st_size // 1024, "KB;", len(frames), "frames")
