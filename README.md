@@ -1,5 +1,7 @@
 # Rumi Emoji — The World of Rumi
 
+<img src="lottie-mark/showreel.gif" alt="The World of Rumi: one mark, many moods" align="right" width="340">
+
 Emoji and stickers for **Rumi**, the AI teaching assistant ([rumi-platform](https://github.com/Orenda-Project/rumi-platform)).
 
 **The emoji is the logo.** Two navy dots joined by the smile curve, no body, one small prop hanging off the
@@ -9,8 +11,6 @@ as vectors by a small Python renderer, never by an image model, so the mark neve
 ![The 12 originals](preview-mark.png)
 
 ![58 emotions](preview-mark-emotions.png)
-
-![The World of Rumi, one mark, many moods](lottie-mark/showreel.gif)
 
 ## Use as Slack / Discord / WhatsApp emoji
 
