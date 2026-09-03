@@ -17,10 +17,14 @@ Open `preview.html` to watch all of them (lottie-web from cdnjs).
 
 ## The rig (`scripts/rumi_mark_rig.py`)
 
-- `Eye` and `Mouth` are **Parts**: a group of variant shapes (eye: dot, big, small, ring, lid, arch, closed, x, heart,
-  star, spiral, look · mouth: link curve, flat, small, frown, smirk, o, open, openfrown, zigzag, wavy, teeth, tongue,
-  dots, zip, none). `part.set(state, t)` records a state change; `bake()` turns the timeline into opacity crossfades.
-  Leaving/entering the round dot also squashes it flat, the way the reference listening video does.
+- `Eye` is **one filled path with 12 vertices that morphs** between dot, big, small, lid, arch, closed, heart, star and x
+  (every shape is normalised to 12 vertices by exact bezier subdivision, and rotated to start at its left-most point so
+  vertices correspond). Dot → arch/lid/closed goes through a flattened "squash" keyframe first, the way the reference
+  listening video does. Ring, spiral and look are stroke-based and crossfade.
+- `Mouth` is **one 9-vertex stroked path that morphs** between the link curve, flat, small, frown, smirk, wavy and zigzag,
+  plus a 12-vertex filled path (open, openfrown, o). Stroke → filled: the curve flattens into the mouth's top edge while
+  the filled shape opens downward from it with a 12 % overshoot; closing reverses it. Teeth, tongue, dots and zip ride on top.
+- `part.set(state, t)` records a state change; `bake()` writes the shape keyframes.
 - Props are groups anchored at their pivot with recipes: `pop`, `fade`, `overshoot`, `wobble`, `shake`, draw-on via `Trim`.
 - `scripts/make_lottie_mark.py`: one small function per emotion. `react(...)` and `status(...)` set the grammar; the rest
   is that emotion's secondary motion.
