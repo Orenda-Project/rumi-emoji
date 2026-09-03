@@ -29,15 +29,16 @@ Caption + emoji = sticker. 41 office/AI/desi one-liners on v6 bodies, WhatsApp/T
 
 ## Lottie animations of the logo mark
 
-12 animated versions of the Rumi mark itself (two dots + smile): happy, tongue, santa, wink, sad, angry, chef, tie, crying, thinking, sleeping, laugh. Real keyframes, 3-second loops with idle → action → rest, 3–7 KB each. Vector JSON for web, Flutter, LottieFiles. See [`lottie/README.md`](lottie/README.md); open `lottie/preview.html` to watch them.
+**58 states** matching `emoji-mark-emotions/` one-to-one (`lottie-mark/`), plus the original 12 with props (`lottie/`). Real keyframes, 3-second loops structured rest → expression → secondary motion → rest, 3–9 KB each. Vector JSON for web, Flutter, LottieFiles. See [`lottie-mark/README.md`](lottie-mark/README.md); open `lottie-mark/preview.html` to watch them all.
 
-![Lottie contact sheet](lottie/contact-sheet.png)
+![Lottie contact sheet](lottie-mark/contact-sheet.png)
 
 ## Contents
 
 | Path | What |
 |---|---|
 | `grids-slime-v6/` · `emoji-slime-v6/` · `manifest-slime-v6.json` · `prompts/PROMPTS_SLIME_V6.md` + `slime_v6.json` · `preview-slime-v6.png` | **Slime pack v6 (current).** 6 source grids (2048×2048), 54 transparent PNGs in `512/` + `128/`, the grid→cell→name database, and the exact prompts. `grids-slime-v6/v6.0/` = the first pass that was too uniform (kept as a before/after). |
+| `lottie-mark/` · `scripts/make_lottie_mark.py` · `scripts/rumi_mark_rig.py` | **58 logo-mark Lottie states** — stateful eye/mouth rig, one animation per static mark emoji. |
 | `lottie/` · `scripts/make_lottie_v2.py` · `scripts/rumi_rig.py` | **Logo-mark Lottie animations** — 12 expressions of the two-dots-and-smile mark, keyframed 3 s loops (python-lottie rig). |
 | `stickers/` · `scripts/make_stickers.py` | **Meme stickers** — `pack.json` (text + emoji per sticker) → `make_stickers.py` → 512px PNG + WebP + preview. |
 | `reference/faces/gemini-9-*.jpeg` | The quality bar v6 was built to match: 4 Gemini reference grids Kamal approved (2026-09-02). The 17 `ref-*.jpeg` files are the earlier face-glyph references. |
