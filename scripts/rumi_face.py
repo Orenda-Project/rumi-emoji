@@ -23,7 +23,10 @@ from PIL import Image, ImageDraw
 
 # logo geometry, measured from rumi-mark-white-smile.png (661x255), in units of width
 R_LOGO, EY, EXL, EXR, STROKE_LOGO, BOTTOM = 0.095, 0.103, 0.10, 0.90, 0.023, 0.372
-R, STROKE, MY = 0.10, 0.032, EY + 0.22   # default eye radius, glyph stroke, mouth centre line
+import os
+_BOLD = float(os.environ.get('RUMI_FACE_BOLD', '1.0'))        # gauntlet knobs, default = v5 look (Kamal: 'v5 was good')
+_STROKE_X = float(os.environ.get('RUMI_FACE_STROKE', '1.0'))  # see gauntlet/face/PROGRESS.md before touching
+R, STROKE, MY = 0.10 * _BOLD, 0.032 * _BOLD * _STROKE_X, EY + 0.22   # default eye radius, glyph stroke, mouth centre line
 SS = 6
 TOP, SIDE = 0.10, 0.06   # headroom above the eye row / beside the outer eyes - paste_face subtracts both
 

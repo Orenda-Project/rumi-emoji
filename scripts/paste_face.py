@@ -10,12 +10,14 @@ the patch centre. Deterministic: the face IS the logo, pixel for pixel.
 import sys
 from collections import deque
 from pathlib import Path
-from PIL import Image, ImageFilter
+from PIL import Image, ImageFilter, ImageDraw
 
 LOGO = Path.home() / ".claude/skills/rumi-brand/assets/rumi-mark-white-smile.png"  # neutral reference; faces come from rumi_face.render
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import rumi_face
-MARK_W = 0.66      # eye spacing ~50% of patch width, matching the reference renders
+import os
+MARK_W = float(os.environ.get('RUMI_MARK_W', '0.66'))   # mark width / patch width; gauntlet knob
+PATCH_GROW = float(os.environ.get('RUMI_PATCH_GROW', '1.0'))  # >1: enlarge the navy patch before pasting (22px readability)
 Y_SHIFT = -0.02    # mark centre offset (fraction of patch height); logo dots sit high
 GLOW = (168, 199, 255)  # brand pale-blue #A8C7FF
 
@@ -53,6 +55,18 @@ def paste(src, dst, logo):
     if not bb:
         print(f"  !! no face patch: {src.name}", file=sys.stderr); im.save(dst); return
     x0, y0, x1, y1 = bb
+    if PATCH_GROW > 1.0:  # gauntlet finding: the face carrier must be ~70% of the emoji footprint to read at 22px
+        px0 = im.load(); mx0, my0 = (x0 + x1) / 2, (y0 + y1) / 2
+        navy0 = px0[int(mx0), int(y0 + (y1 - y0) * 0.25)]
+        gw, gh = (x1 - x0) * PATCH_GROW / 2, (y1 - y0) * PATCH_GROW / 2
+        body_alpha = im.getchannel("A")
+        oval = Image.new("L", im.size, 0)
+        ImageDraw.Draw(oval).ellipse((mx0 - gw, my0 - gh, mx0 + gw, my0 + gh), fill=255)
+        oval = oval.filter(ImageFilter.GaussianBlur(max(1, int(gw / 40))))
+        oval = Image.fromarray((__import__("numpy").array(oval) * (__import__("numpy").array(body_alpha) > 200)).astype("uint8"))
+        fill = Image.new("RGBA", im.size, tuple(navy0[:3]) + (255,))
+        im.paste(fill, (0, 0), oval)
+        bb = face_bbox(im); x0, y0, x1, y1 = bb
     pw, ph = x1 - x0 + 1, y1 - y0 + 1
     # erase anything the model drew on the patch: refill the inscribed ellipse row by row, lerping the
     # navy sampled just inside the ellipse's left/right edge (edges are never where features get drawn)
@@ -72,7 +86,6 @@ def paste(src, dst, logo):
     # soften the row-wise refill (kills banding + any faint ghost) - blur only inside a slightly smaller ellipse
     blurred = im.filter(ImageFilter.GaussianBlur(max(2, pw // 40)))
     mask = Image.new("L", im.size, 0)
-    from PIL import ImageDraw
     ImageDraw.Draw(mask).ellipse((mx - ex * 0.92, my - ey * 0.92, mx + ex * 0.92, my + ey * 0.92), fill=255)
     im.paste(blurred, (0, 0), mask)
     mw = int(pw * MARK_W)

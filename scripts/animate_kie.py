@@ -96,7 +96,7 @@ def key_out_green(im, tol=115):
     return im
 
 
-def main(emotion, poses, weights, out_gif, fps_base_ms=95):
+def main(emotion, poses, weights, out_gif, fps_base_ms=95, out_size=128):
     key = kie_key()
     scratch = Path(os.environ.get("SCRATCH", "/tmp")) / f"kie_{emotion}"
     scratch.mkdir(parents=True, exist_ok=True)
@@ -124,7 +124,7 @@ def main(emotion, poses, weights, out_gif, fps_base_ms=95):
         frames.append(fp)
         print(f"frame {i} done")
 
-    imgs = [key_out_green(Image.open(f)).resize((128, 128), Image.LANCZOS) for f in frames]
+    imgs = [key_out_green(Image.open(f)).resize((out_size, out_size), Image.LANCZOS) for f in frames]
     TRANS = 95
     base_pal = imgs[0].convert("RGB").quantize(colors=TRANS, method=Image.MEDIANCUT)
     out, durs = [], []
@@ -140,17 +140,31 @@ def main(emotion, poses, weights, out_gif, fps_base_ms=95):
 
 
 if __name__ == "__main__":
-    # rumi-wave: real wave — paddle sweeps, joyful blink at the inward apex
-    poses = [
-        "the raised right paddle arm tilted about 25 degrees outward, away from the head, mid-wave.",
-        "the raised right paddle arm tilted about 10 degrees outward.",
-        "the raised right paddle arm perfectly upright.",
-        "the raised right paddle arm tilted about 12 degrees inward, toward the head.",
-        "the raised right paddle arm tilted about 25 degrees inward, close to the head, AND both eyes closed into happy upward-curved arcs (joyful blink).",
-        "the raised right paddle arm tilted about 12 degrees inward, toward the head.",
-        "the raised right paddle arm perfectly upright.",
-        "the raised right paddle arm tilted about 10 degrees outward.",
-    ]
-    # anticipation/apex hold longer, in-betweens rush (character-animation skill weights)
-    weights = [1.6, 0.9, 0.95, 0.9, 1.5, 0.9, 0.95, 0.9]
-    main("rumi-wave", poses, weights, ROOT / "emoji/gif/rumi-wave.gif")
+    import sys as _sys
+    if len(_sys.argv) > 1 and _sys.argv[1] == "celebrate":
+        # rumi-celebrate: both paddle arms STAY raised the entire loop, only the
+        # angle wobbles a small amount (mirrors the wave GIF's single-limb-delta
+        # technique, which held identity; whole-body crouch/jump language broke it)
+        poses = [
+            "both raised paddle arms tilted about 12 degrees outward, away from the head, keeping them fully raised the whole time.",
+            "both raised paddle arms perfectly upright, keeping them fully raised the whole time.",
+            "both raised paddle arms tilted about 12 degrees further up and outward, stretched a bit higher, AND both eyes closed into happy upward-curved arcs (joyful blink), keeping the arms fully raised the whole time.",
+            "both raised paddle arms perfectly upright, keeping them fully raised the whole time.",
+        ]
+        weights = [0.9, 0.95, 1.6, 0.95]
+        main("rumi-celebrate", poses, weights, ROOT / "emoji/gif/rumi-celebrate.gif", out_size=512)
+    else:
+        # rumi-wave: real wave — paddle sweeps, joyful blink at the inward apex
+        poses = [
+            "the raised right paddle arm tilted about 25 degrees outward, away from the head, mid-wave.",
+            "the raised right paddle arm tilted about 10 degrees outward.",
+            "the raised right paddle arm perfectly upright.",
+            "the raised right paddle arm tilted about 12 degrees inward, toward the head.",
+            "the raised right paddle arm tilted about 25 degrees inward, close to the head, AND both eyes closed into happy upward-curved arcs (joyful blink).",
+            "the raised right paddle arm tilted about 12 degrees inward, toward the head.",
+            "the raised right paddle arm perfectly upright.",
+            "the raised right paddle arm tilted about 10 degrees outward.",
+        ]
+        # anticipation/apex hold longer, in-betweens rush (character-animation skill weights)
+        weights = [1.6, 0.9, 0.95, 0.9, 1.5, 0.9, 0.95, 0.9]
+        main("rumi-wave", poses, weights, ROOT / "emoji/gif/rumi-wave.gif")
