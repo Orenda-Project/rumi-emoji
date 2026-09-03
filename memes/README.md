@@ -25,6 +25,11 @@ Company meme stickers in the "World of Rumi" language: a hand-drawn navy-ink sti
 5. **Die-cut**: `generate_memes.py --sheet` turns near-white (>235) to transparent → `png/rumi-meme-<id>.png`
    and rebuilds `preview.png` from the cut versions. `raw/` keeps the untouched Gemini output.
 
+## Batches
+
+- `raw/`, `png/`, `preview.png` here: the first 10 general office/AI stickers.
+- [`taleemabad/`](taleemabad/README.md): 16 Taleemabad-specific stickers (team rituals + school reality). Own `prompts.json`; run with `--prompts memes/taleemabad/prompts.json`.
+
 ## Files
 
 | Path | What |

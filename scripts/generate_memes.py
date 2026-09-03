@@ -4,6 +4,7 @@
     python3 scripts/generate_memes.py            # all stickers in memes/prompts.json -> memes/raw/<id>.png
     python3 scripts/generate_memes.py chai-break # just some (regenerate a reject: delete memes/raw/<id>.png first)
     python3 scripts/generate_memes.py --sheet    # memes/png/<id>.png (white->transparent) + memes/preview.png
+    python3 scripts/generate_memes.py --prompts memes/taleemabad/prompts.json   # another batch, own raw/ png/ preview
 
 Needs GEMINI_API_KEY (env or personal-agent-v2/.env). Skips ids whose raw file already exists.
 """
@@ -18,9 +19,14 @@ if not KEY:
             KEY = line.split("=", 1)[1].strip().strip('"')
 if not KEY:
     sys.exit("GEMINI_API_KEY not set")
-CFG = json.loads((ROOT / "memes/prompts.json").read_text())
+ARGS = sys.argv[1:]
+PROMPTS = "memes/prompts.json"
+if ARGS[:1] == ["--prompts"]:                       # batch file, e.g. --prompts memes/taleemabad/prompts.json
+    PROMPTS, ARGS = ARGS[1], ARGS[2:]
+CFG = json.loads((ROOT / PROMPTS).read_text())
 URL = f"https://generativelanguage.googleapis.com/v1beta/models/{CFG['model']}:generateContent?key={KEY}"
-RAW, PNG = ROOT / "memes/raw", ROOT / "memes/png"
+BATCH = (ROOT / PROMPTS).parent
+RAW, PNG = BATCH / "raw", BATCH / "png"
 
 
 def generate(st):
@@ -67,11 +73,11 @@ def sheet():
         flat = Image.new("RGBA", im.size, "white"); flat.alpha_composite(im)   # preview shows the die-cut result, not the raw
         sh.paste(flat.convert("RGB").resize((cell - 20, cell - 20)), (x + 10, y + 10))
         dr.text((x + 14, y + cell - 24), sid, fill="#0B2545")
-    sh.save(ROOT / "memes/preview.png"); print(f"{len(ids)} stickers -> memes/png, preview -> memes/preview.png")
+    sh.save(BATCH / "preview.png"); print(f"{len(ids)} stickers -> {PNG}, preview -> {BATCH / 'preview.png'}")
 
 
 if __name__ == "__main__":
-    args = sys.argv[1:]
+    args = ARGS
     if args == ["--sheet"]:
         sheet()
     else:

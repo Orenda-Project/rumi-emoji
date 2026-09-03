@@ -1,0 +1,90 @@
+{
+  "model": "nano-banana-pro-preview",
+  "reference_image": "memes/face-reference.png",
+  "reference_role": "REFERENCE IMAGE = the character's FACE, exactly as drawn: two solid round dots (eyes) joined by one single smile curve (mouth). This IS the character's head - there is no head outline, no circle, no nose, no eyebrows, no pupils, no extra facial features. Reproduce these two dots and the connecting curve faithfully in every image, the same relative size and spacing, drawn in the same ink as the body. Only the props and the body change; the face never changes except where the scene says so. CRITICAL: do NOT draw a circle, oval or outline for the head. Where a stick figure's head would be there is only empty white space containing the two dots and the curve, exactly like the reference. A head circle is a failed image.",
+  "style": "Minimalist hand-drawn stick figure webcomic sticker, bold deep-navy ink line art (#0B2545, no black, no other colours except a single tiny accent when named), doodle aesthetic, isolated on a solid white background, cartoon motion lines, hand-drawn text caption in the same navy ink, relatable sarcastic office humor, clean die-cut sticker design with a thick white border, high contrast, 2D vector graphic. The character 'Rumi' is a simple stick figure whose head is ONLY the reference face (two dots + one smile curve floating where the head would be). Pure #FFFFFF white background edge to edge (not grey, not off-white). Square 1:1 composition, character large and centered, caption in a clear hand-lettered style either above or below, spelled EXACTLY as given, nothing else written anywhere.",
+  "negative": "no head circle, no extra eyes, no pupils, no eyebrows, no nose, no teeth, no realistic shading, no grey fills, no gradients, no colours other than navy ink on white (plus the one named accent), no speech bubble unless named, no logos, no watermark, no misspelled or extra words, no border cropping.",
+  "stickers": [
+    {
+      "id": "notion-eod",
+      "text": "Update your Notion cards by EOD",
+      "scene": "Rumi standing on a chair holding a hand-drawn megaphone up beside where the head would be, little kanban cards flying around with motion lines. The head is ONLY the reference face: two floating dots and the connected smile curve, nothing else, NO circle around them, no open mouth."
+    },
+    {
+      "id": "kumrat",
+      "text": "Kumrat it is!",
+      "scene": "Rumi pointing at a wooden signpost with three arrows labelled 'Deosai', 'Tirch Mir', 'Kumrat', a tiny mountain doodle behind; the signpost labels are the only other text allowed."
+    },
+    {
+      "id": "gws",
+      "text": "Gws",
+      "scene": "Rumi standing upright in a normal stick-figure pose, both hands holding one big sunflower in front of the chest (the sunflower head is the ONE accent colour: warm gold #F5B301), small tender sparkles around. Rumi's head is NO head circle: only the two floating dots and the curve from the reference."
+    },
+    {
+      "id": "green-light",
+      "text": "Green light on it",
+      "scene": "Rumi giving a confident thumbs up beside a tall hand-drawn traffic light whose bottom lamp is lit (the lit lamp is the ONE accent colour: green #2E9E5B), small radiating lines from the lamp."
+    },
+    {
+      "id": "remote-today",
+      "text": "Working remotely today",
+      "scene": "Rumi under a blanket in bed, laptop on knees, one arm out holding a mug, a small window with rain lines behind. Rumi's head is NO head circle: only the two floating dots and the curve from the reference, with empty white space around them."
+    },
+    {
+      "id": "running-late",
+      "text": "Running late, traffic",
+      "scene": "Rumi sitting in a tiny rickshaw stuck between two car outlines, a clock above with motion lines, one sweat drop by the face."
+    },
+    {
+      "id": "load-shedding",
+      "text": "Load shedding. WFH.",
+      "scene": "Rumi sitting in the dark beside a single candle (candle flame is the ONE accent colour: coral #E8746A), laptop closed with a tiny empty battery icon above it; the smile curve is flat."
+    },
+    {
+      "id": "lesson-plan",
+      "text": "Lesson plan ready, teacher!",
+      "scene": "Rumi proudly handing a tall neat stack of papers to a taller stick-figure teacher (the teacher has a plain simple face, not the reference face), small sparkle on the stack. Rumi's head is NO head circle: only the two floating dots and the curve from the reference, with empty white space around them."
+    },
+    {
+      "id": "rumi-typing",
+      "text": "Rumi is typing...",
+      "scene": "Rumi hunched over a phone with both thumbs blurred by speed lines, a chat bubble above containing exactly three dots."
+    },
+    {
+      "id": "school-visit",
+      "text": "School visit day",
+      "scene": "Rumi with a backpack striding toward a small schoolhouse doodle with a flag, sun in the corner, a tiny notebook in hand. Rumi's head is NO head circle: only the two floating dots and the curve from the reference, with empty white space around them."
+    },
+    {
+      "id": "kaya-baat",
+      "text": "Kaya Baat!",
+      "scene": "Rumi clapping enthusiastically with motion lines from the hands, confetti dashes and two stars around, chest puffed."
+    },
+    {
+      "id": "internet-nahi",
+      "text": "Internet nahi chal raha",
+      "scene": "Rumi holding a phone high above the head toward the sky, a wifi symbol with a cross through it floating above, other hand on hip; face frowning."
+    },
+    {
+      "id": "transcription",
+      "text": "Transcription failed. Again.",
+      "scene": "Rumi staring at a laptop showing a flat audio waveform with a small X, one hand pinching where the nose would be (there is no nose - just the gesture), a tiny storm cloud above."
+    },
+    {
+      "id": "no-blockers",
+      "text": "Standup: no blockers",
+      "scene": "Rumi standing straight, smiling, one arm behind the back with crossed fingers visible from behind, a small pile of tangled cables behind the feet."
+    },
+    {
+      "id": "sprint-over",
+      "text": "Sprint's over already?",
+      "scene": "Rumi with both hands raised to the sides of where the head would be, staring at a wall calendar with many crossed days; the face is the reference face with the two dots drawn bigger and a small round o mouth instead of the curve. NO head circle."
+    },
+    {
+      "id": "chai-pe",
+      "text": "Chai pe discuss karte hain",
+      "scene": "Rumi and a second plain-faced stick figure sitting on a low bench with a steaming teapot between them, a tiny light bulb above Rumi."
+    }
+  ],
+  "batch": "taleemabad"
+}
