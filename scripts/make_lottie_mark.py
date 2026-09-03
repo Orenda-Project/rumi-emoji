@@ -82,8 +82,8 @@ def hearts_float(f, t0=IN + 100):
     for i, (x, y, s) in enumerate(((EXR + .14, EY - .16, .55), (EXR + .26, EY - .30, .8))):
         g = f.prop(); c = P(x, y); heart(g, (c.x, c.y), RP * s); anchor(g, (c.x, c.y))
         for k, st in enumerate((t0 + i * 350, t0 + i * 350 + 900)):
-            if st + 900 > OUTT: break
-            pop(g, st, 200, 1.2, out_t=st + 700, out_dur=200)
+            if k and st + 900 > OUTT: break            # always at least one pop, so the heart never sits there un-animated
+            pop(g, st, 200, 1.2, out_t=min(st + 700, OUTT - 150), out_dur=200)
         p = g.transform.position; p.add_keyframe(ms(t0), V(c.x, c.y + 14), LIN); p.add_keyframe(ms(OUTT), V(c.x, c.y - 26), LIN)
 
 

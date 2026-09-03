@@ -10,6 +10,8 @@ as vectors by a small Python renderer, never by an image model, so the mark neve
 
 ![58 emotions](preview-mark-emotions.png)
 
+![The World of Rumi, one mark, many moods](lottie-mark/showreel.gif)
+
 ## Use as Slack / Discord / WhatsApp emoji
 
 Upload the PNGs from **`emoji-mark/128/`** (the 12 originals) and **`emoji-mark-emotions/128/`** (58 emotions).

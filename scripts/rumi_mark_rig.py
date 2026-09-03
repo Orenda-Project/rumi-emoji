@@ -413,9 +413,33 @@ class Face:
 
     def save(self, path):
         for part in (self.mouth, self.eyeL, self.eyeR): part.bake()
+        sort_keyframes(self.an)
         from lottie.exporters.core import export_lottie
         with open(path, "w") as fh: export_lottie(self.an, fh)
         return path
+
+
+def sort_keyframes(obj, _seen=None):
+    """Lottie requires keyframes in time order; recipes that add a pulse after an exit key would otherwise break players."""
+    _seen = _seen if _seen is not None else set()
+    if id(obj) in _seen: return
+    _seen.add(id(obj))
+    kfs = getattr(obj, "keyframes", None)
+    if isinstance(kfs, list) and kfs and hasattr(kfs[0], "time"):
+        kfs.sort(key=lambda k: k.time)
+        # drop exact-duplicate times (keep the last one written)
+        dedup = {}
+        for k in kfs: dedup[k.time] = k
+        kfs[:] = [dedup[t] for t in sorted(dedup)]
+    for name in dir(obj):
+        if name.startswith("_"): continue
+        try: v = getattr(obj, name)
+        except Exception: continue
+        if callable(v): continue
+        if isinstance(v, list):
+            for it in v:
+                if hasattr(it, "__dict__"): sort_keyframes(it, _seen)
+        elif hasattr(v, "__dict__") and not isinstance(v, type): sort_keyframes(v, _seen)
 
 
 def near_right(dx=1.6, dy=-1.6): return (Rr.x + dx * RP, Rr.y + dy * RP)

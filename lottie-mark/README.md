@@ -5,6 +5,10 @@ so a static PNG and its animation are interchangeable. 3–9 KB each.
 
 Open `preview.html` to watch all of them (lottie-web from cdnjs).
 
+![showreel](showreel.gif)
+
+ /  / : one mark morphing through twelve moods in 19 s, made by  from the same rig (each beat 1.5 s). The GIF is the README hero; the JSON plays in any Lottie player.
+
 ![contact sheet: 8 frames of each](contact-sheet.png)
 
 ## Two grammars
