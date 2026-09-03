@@ -1,6 +1,8 @@
 # Rumi Emoji — The World of Rumi
 
-Emoji and stickers for **Rumi**, the AI teaching assistant ([rumi-platform](https://github.com/Orenda-Project/rumi-platform)).
+Emoji and stickers for **Rumi**, the AI teaching assistant 
+
+([rumi-platform](https://github.com/Orenda-Project/rumi-platform)).
 
 <p align="right"><img src="lottie-mark/showreel.gif" alt="The World of Rumi: one mark, many moods" width="420"></p>
 
