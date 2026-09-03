@@ -1,39 +1,47 @@
 # Rumi mark — Lottie animations
 
 The Rumi logo itself, animated. Two navy dots joined by one smile curve, 12 expressions from
-"The World of Rumi" sheet, each a 1-second loop at 30fps. Vector, so they scale to any size and
-recolour by editing a number.
+"The World of Rumi" sheet. **v2 (2026-09-03): real keyframes and easing**, 3-second loops structured
+idle → anticipation → action → settle → rest, 3–7 KB each. Vector, so they scale to any size and recolour by editing a number.
 
 Open `preview.html` in a browser to see all 12 playing (uses lottie-web from cdnjs).
 
 | File | Motion |
 |---|---|
-| `rumi-happy.json` | gentle breathe, smile widens |
-| `rumi-tongue.json` | tongue pops out and wiggles |
-| `rumi-santa.json` | Santa hat bobs on the right dot |
-| `rumi-wink.json` | right dot closes to a dash, sparkle lines flash |
-| `rumi-sad.json` | frown, one tear falls from the right dot |
-| `rumi-angry.json` | dark red mark, slanted brows, whole face shakes |
-| `rumi-chef.json` | chef hat on the left dot, whisk stirs |
-| `rumi-tie.json` | collar + necktie swing, dots blink |
-| `rumi-crying.json` | frown, tears stream from both dots |
-| `rumi-thinking.json` | thought bubble, dots pop in one by one |
-| `rumi-sleeping.json` | half-closed dots, zZZ float up and fade |
-| `rumi-laugh.json` | big open mouth bounces |
+| `rumi-happy.json` | breathes (1 cycle/3 s), blinks at 0.9 s, smile widens 14% at 1.9 s and settles |
+| `rumi-tongue.json` | smile squeezes (anticipation), tongue pops from behind the curve with overshoot, wiggles, retracts |
+| `rumi-santa.json` | hat nods twice with a spring, pivot at the brim on the dot |
+| `rumi-wink.json` | eye widens 10% first, closes to a wide dash for 400 ms, sparkle pops 112→100%, smile widens 60 ms later |
+| `rumi-sad.json` | frown held; tear forms over 500 ms, hangs, then falls in 600 ms |
+| `rumi-angry.json` | brows press down, 12 decaying 50 ms shakes, settle |
+| `rumi-chef.json` | whisk stirs 3 strokes, each with 10% overshoot; hat tilts with the breath |
+| `rumi-tie.json` | pendulum swing lagging the breath by 100 ms (follow-through); blink |
+| `rumi-crying.json` | sob bob every 400 ms; 4 tears staggered 500 ms |
+| `rumi-thinking.json` | eyes drift up-right, mouth flattens, 3 bubble parts pop in 150 ms apart, then pop out |
+| `rumi-sleeping.json` | eyes are bowls (dot clipped flat, like the Slack avatar), slow deep breath, 3 zZZ rise and fade |
+| `rumi-laugh.json` | mouth opens in 150 ms into a hollow laugh, 3 ha-ha bounces, hold, close |
 
 ## How they're built
 
-`scripts/make_lottie.py` draws every frame as an SVG from one parameterised `mark()` function
-(dot positions, radius, stroke, navy `#001240` sampled from the brand PNG), then converts the 30
-frames into one Lottie via the asset-studio `svg_to_lottie.py` flipbook converter. No After Effects.
+`scripts/rumi_rig.py` is a small rig on python-lottie: two dot ellipses, one mouth path (two vertices, so it
+morphs smile ↔ frown), Material easing curves, a `blink()`, an `overshoot()` spring helper, and prop helpers.
+`scripts/make_lottie_v2.py` has one function per expression writing keyframes in milliseconds. No After Effects,
+no flipbook: each file is a handful of shapes with real keyframes, which is why they are 3–7 KB.
 
 ```bash
-python3 scripts/make_lottie.py            # all 12 -> lottie/*.json + preview.html + contact-sheet.png
-python3 scripts/make_lottie.py wink laugh # just some
+python3 scripts/make_lottie_v2.py            # all 12 -> lottie/rumi-*.json
+python3 scripts/make_lottie_v2.py wink laugh # just some
 ```
 
-Add an expression: write one `def name(i)` returning SVG for frame `i` of 30, register it in
-`EMOTIONS`, rerun. Keep the two dots and the curve as the anchor; props go around them.
+Timing rules the set follows (from the research in `personal-agent-v2/.claude/skills/lottie-motion/`):
+loops 3 s with ≥40% rest; blink 100/50/100 ms; mouth morphs 200–300 ms; anticipation 10–15% opposite;
+overshoot 5–10% then settle; secondary action lags 50–100 ms. Lottie z-order gotcha: the first shape in a
+list draws on top, so "behind" means `add_shape`, "on top" means `insert(0, …)`.
+
+Add an expression: copy one function, keep the two dots and the curve as the anchor, put props in their own
+group with the anchor at the pivot, register it in `EMOTIONS`, rerun, then check `contact-sheet.png`.
+
+`scripts/make_lottie.py` is the old v1 flipbook generator, kept for reference.
 
 ## Using them
 
@@ -44,5 +52,5 @@ Add an expression: write one `def name(i)` returning SVG for frame `i` of 30, re
 
 ## Known limits
 
-- Flipbook files are 50–130KB each (30 layers). Fine for web/app. If size matters, drop `N` to 15 in the script.
-- Renders were checked with python-lottie and lottie-web; dotLottie/`.lottie` zip not generated.
+- Checked in python-lottie's renderer and in lottie-web (frozen frames + live preview); dotLottie/`.lottie` zip not generated.
+- Telegram TGS would additionally need 60 fps and gzip; these are 30 fps JSON.
