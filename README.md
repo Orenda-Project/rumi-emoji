@@ -2,7 +2,7 @@
 
 Emoji and stickers for **Rumi**, the AI teaching assistant  ([rumi-platform](https://github.com/Orenda-Project/rumi-platform)).
 
-<p align="center"><img src="lottie-mark/showreel.gif" alt="The World of Rumi: one mark, many moods" width="420"></p>
+<p align="center"><img src="lottie-mark/showreel.gif" alt="The World of Rumi: one mark, many moods"></p>
 
 **The emoji is the logo.** Two navy dots joined by the smile curve, no body, one small prop hanging off the
 mark. Navy on transparent, so it sits on the cream/white of Slack, WhatsApp and Teams. Every file is drawn
