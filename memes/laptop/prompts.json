@@ -1,0 +1,86 @@
+{
+  "model": "nano-banana-pro-preview",
+  "reference_image": "memes/face-reference.png",
+  "reference_role": "REFERENCE IMAGE = the character's FACE, exactly as drawn: two solid round dots (eyes) joined by one single smile curve (mouth). This IS the character's head - there is no head outline, no circle, no nose, no eyebrows, no pupils, no extra facial features. Reproduce these two dots and the connecting curve faithfully in every image, the same relative size and spacing, drawn in the same ink as the body. Only the props and the body change; the face never changes except where the scene says so. CRITICAL: do NOT draw a circle, oval or outline for the head. Where a stick figure's head would be there is only empty white space containing the two dots and the curve, exactly like the reference. A head circle is a failed image.",
+  "style": "Minimalist hand-drawn stick figure webcomic sticker, bold deep-navy ink line art (#0B2545, no black, no other colours except a single tiny accent when named), doodle aesthetic, isolated on a solid white background, cartoon motion lines, hand-drawn text caption in the same navy ink, relatable sarcastic office humor, clean die-cut LAPTOP sticker: bold badge/emblem composition (round, shield, or rounded-rectangle silhouette when named), thick confident strokes that read from two metres away, thick white border, high contrast, 2D vector graphic. The character 'Rumi' is a simple stick figure whose head is ONLY the reference face (two dots + one smile curve floating where the head would be). Pure #FFFFFF white background edge to edge (not grey, not off-white). Square 1:1 composition, character large and centered, caption in a bold hand-lettered style, short, integrated into the badge (arched around a circle, or on a banner ribbon, or stacked in two lines), spelled EXACTLY as given, nothing else written anywhere.",
+  "negative": "no head circle, no extra eyes, no pupils, no eyebrows, no nose, no teeth, no realistic shading, no grey fills, no gradients, no colours other than navy ink on white (plus the one named accent), no speech bubble unless named, no logos, no watermark, no misspelled or extra words, no border cropping.",
+  "stickers": [
+    {
+      "id": "localhost",
+      "text": "There's no place like 127.0.0.1",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space. Round badge: Rumi (stick body, head = only the two floating dots and curve, no circle) sitting cross-legged in front of a small house outline; the house has a plain heart-shaped window and NO face of its own; caption arched around the top of the circle."
+    },
+    {
+      "id": "powered-by-chai",
+      "text": "Powered by chai",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space. Rounded-rectangle badge like a power label: Rumi holding a steaming cup high with both hands, a lightning bolt beside the cup, caption on a banner ribbon below."
+    },
+    {
+      "id": "hello-world",
+      "text": "hello, world",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space. Rumi waving one arm big with motion lines, standing on a tiny globe outline, caption in lowercase monospace-feeling hand lettering below."
+    },
+    {
+      "id": "ctrl-z",
+      "text": "Ctrl+Z is my superpower",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space. Rumi in a small cape mid-leap, one fist forward, a hand-drawn keyboard key labelled 'Ctrl' and one labelled 'Z' floating (those two key labels are the only other text)."
+    },
+    {
+      "id": "show-me-code",
+      "text": "Talk is cheap. Show me the code.",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space. Shield badge: Rumi with arms crossed, chin up, a laptop leaning against the legs, caption stacked in two lines at the bottom of the shield."
+    },
+    {
+      "id": "trust-engineer",
+      "text": "Trust me, I'm an engineer",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space. Round badge with the caption arched around the ring; inside, Rumi holds a wrench in one hand and a laptop in the other, tiny duct-tape cross on the laptop; Rumi's head is only the floating dots and curve with white space around them, NOT a filled or outlined circle."
+    },
+    {
+      "id": "ship-it",
+      "text": "Ship it",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space. Rumi standing at the bow of a small paper boat like a captain, one arm pointing forward, motion waves under the boat, caption bold and big below."
+    },
+    {
+      "id": "it-compiles",
+      "text": "It compiles. Ship it.",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space. Rumi giving a double thumbs up in front of a laptop with a single tiny check on the screen, small confetti dashes, rounded-rectangle badge."
+    },
+    {
+      "id": "git-commit",
+      "text": "Keep calm and git commit",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space. Crown-style badge: Rumi sitting calmly in lotus pose, tiny commit dots connected by a line floating around like a halo, caption stacked below in the classic Keep Calm layout."
+    },
+    {
+      "id": "detective",
+      "text": "Debugging: detective and murderer",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space. Rumi in a small detective hat that floats just above the two dots (the hat does not enclose the face; dots and curve sit in open white space below the brim), holding a magnifying glass over a footprint, round badge, caption arched."
+    },
+    {
+      "id": "built-with-rumi",
+      "text": "Built with Rumi",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space. Rumi holding a small paintbrush and a wrench, standing on a stack of three books, a tiny heart floating; caption on a banner ribbon across the bottom."
+    },
+    {
+      "id": "teaching-assistant",
+      "text": "AI teaching assistant on duty",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space. Rumi holding a pointer stick toward a small blackboard with a squiggle (no letters), a tiny badge pin on the chest; shield badge, caption arched at the top."
+    },
+    {
+      "id": "coffee-to-code",
+      "text": "coffee → code",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space. Rumi pouring from a coffee pot on the left; the coffee stream turns into a line of tiny curly braces and semicolons flowing into a laptop on the right; caption below with a hand-drawn arrow."
+    },
+    {
+      "id": "no-bugs",
+      "text": "No bugs, only surprises",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space. Rumi holding a small wrapped gift box with a tiny cartoon beetle peeking out of the lid, one eyebrow-free amused look, round badge, caption arched."
+    },
+    {
+      "id": "weekend-mode",
+      "text": "Weekend mode: ON",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space. Rumi lying in a hammock strung between two laptop stands, one leg dangling, a tiny toggle switch drawn in the ON position; caption bold below."
+    }
+  ],
+  "batch": "laptop",
+  "imageSize": "2K"
+}
