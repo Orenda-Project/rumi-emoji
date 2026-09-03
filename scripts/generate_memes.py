@@ -39,7 +39,7 @@ def generate(st):
             f"Avoid: {CFG['negative']}")
     parts = [{"text": CFG["reference_role"]}, {"inlineData": {"mimeType": "image/png", "data": ref}}, {"text": text}]
     payload = json.dumps({"contents": [{"parts": parts}],
-                          "generationConfig": {"imageConfig": {"aspectRatio": "1:1", "imageSize": "1K"}}})
+                          "generationConfig": {"imageConfig": {"aspectRatio": "1:1", "imageSize": CFG.get("imageSize", "1K")}}})
     print(f"generating {st['id']} ...")
     r = subprocess.run(["curl", "-s", "-X", "POST", URL, "-H", "Content-Type: application/json", "-d", "@-"],
                        input=payload, capture_output=True, text=True)

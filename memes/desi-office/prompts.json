@@ -1,0 +1,91 @@
+{
+  "model": "nano-banana-pro-preview",
+  "reference_image": "memes/face-reference.png",
+  "reference_role": "REFERENCE IMAGE = the character's FACE, exactly as drawn: two solid round dots (eyes) joined by one single smile curve (mouth). This IS the character's head - there is no head outline, no circle, no nose, no eyebrows, no pupils, no extra facial features. Reproduce these two dots and the connecting curve faithfully in every image, the same relative size and spacing, drawn in the same ink as the body. Only the props and the body change; the face never changes except where the scene says so. CRITICAL: do NOT draw a circle, oval or outline for the head. Where a stick figure's head would be there is only empty white space containing the two dots and the curve, exactly like the reference. A head circle is a failed image.",
+  "style": "Minimalist hand-drawn stick figure webcomic sticker, bold deep-navy ink line art (#0B2545, no black, no other colours except a single tiny accent when named), doodle aesthetic, isolated on a solid white background, cartoon motion lines, hand-drawn text caption in the same navy ink, relatable sarcastic office humor, clean die-cut sticker design with a thick white border, high contrast, 2D vector graphic. The character 'Rumi' is a simple stick figure whose head is ONLY the reference face (two dots + one smile curve floating where the head would be). Pure #FFFFFF white background edge to edge (not grey, not off-white). Square 1:1 composition, character large and centered, caption in a clear hand-lettered style either above or below, spelled EXACTLY as given, nothing else written anywhere.",
+  "negative": "no head circle, no extra eyes, no pupils, no eyebrows, no nose, no teeth, no realistic shading, no grey fills, no gradients, no colours other than navy ink on white (plus the one named accent), no speech bubble unless named, no logos, no watermark, no misspelled or extra words, no border cropping.",
+  "stickers": [
+    {
+      "id": "scene-kya",
+      "text": "Bhai scene kya hai?",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space (any other stick figures in the scene may have plain circle heads, Rumi must not). Rumi peeking around an open door frame, half the body hidden, one eyebrow-free curious look, a tiny question mark. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "thora-kaam",
+      "text": "Thora sa kaam reh gaya",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space (any other stick figures in the scene may have plain circle heads, Rumi must not). Rumi holding up one tiny sheet of paper with a shrug while a giant mountain of papers towers behind. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "acha-theek",
+      "text": "Acha theek hai",
+      "scene": "Rumi with a slow resigned shrug, palms up, shoulders low, the smile curve slightly flatter. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "bas-5-min",
+      "text": "Bas 5 minute",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space (any other stick figures in the scene may have plain circle heads, Rumi must not). Rumi holding up five fingers on one hand while a wall clock behind spins with motion lines and a tiny calendar page flies off. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "chalo-chalo",
+      "text": "Chalo chalo",
+      "scene": "Rumi herding four tiny plain-faced stick figures toward a door with both arms sweeping, motion lines. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "jazakallah",
+      "text": "JazakAllah",
+      "scene": "Rumi with one hand on the chest, slight bow of the shoulders, a small heart floating beside the face. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "inshallah-kal",
+      "text": "InshaAllah kal",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space (any other stick figures in the scene may have plain circle heads, Rumi must not). Rumi pointing confidently at tomorrow's box on a wall calendar, a small sun rising in the corner. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "mashallah-team",
+      "text": "MashaAllah team",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space (any other stick figures in the scene may have plain circle heads, Rumi must not). Rumi with both arms stretched wide around a cluster of four small plain-faced stick figures, small sparkles above the group. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "biryani",
+      "text": "Biryani day",
+      "scene": "Rumi holding an enormous steaming plate of biryani with both hands, steam swirls, the rice mound is the ONE accent colour: gold #F5B301. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "half-day",
+      "text": "Half day. It's Friday.",
+      "scene": "Rumi sprinting out of an office door with a bag flying behind, papers swirling in the wake, big motion lines. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "homework",
+      "text": "Homework check!",
+      "scene": "Rumi as a teacher holding a long pointer stick beside a tall stack of notebooks, one hand on hip. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "samajh-nahi",
+      "text": "Teacher, samajh nahi aaya",
+      "scene": "A small plain-faced student stick figure with hand raised at a desk, Rumi standing at a blackboard with a chalk and a squiggle equation on the board (squiggles only, no letters). Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "silence",
+      "text": "Class, silence please",
+      "scene": "Rumi with one finger raised in front of where the mouth curve is, three tiny chatter squiggles fading around. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "exam-season",
+      "text": "Exam season",
+      "scene": "Rumi buried up to the shoulders in a pile of open books, one candle beside (candle flame is the ONE accent colour: coral #E8746A), tiny zzz above. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "result-day",
+      "text": "Result day",
+      "scene": "Rumi holding up a paper with a huge check mark, jumping with both feet off the ground, sparkles and confetti dashes. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "present",
+      "text": "Attendance: present!",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space (any other stick figures in the scene may have plain circle heads, Rumi must not). Rumi in a row of five small plain-faced stick figures at desks, Rumi's arm shooting straight up with motion lines. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    }
+  ],
+  "batch": "desi-office",
+  "imageSize": "2K"
+}

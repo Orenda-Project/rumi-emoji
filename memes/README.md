@@ -29,6 +29,10 @@ Company meme stickers in the "World of Rumi" language: a hand-drawn navy-ink sti
 
 - `raw/`, `png/`, `preview.png` here: the first 10 general office/AI stickers.
 - [`taleemabad/`](taleemabad/README.md): 16 Taleemabad-specific stickers (team rituals + school reality). Own `prompts.json`; run with `--prompts memes/taleemabad/prompts.json`.
+- [`dev-ai/`](dev-ai/README.md): 16 dev + AI-coworker stickers, **2K** for print.
+- [`desi-office/`](desi-office/README.md): 16 Roman Urdu office + classroom stickers, **2K** for print.
+
+58 stickers total across the four batches. Set `"imageSize": "2K"` in a batch's `prompts.json` for print-grade output (1K is fine for chat).
 
 ## Files
 

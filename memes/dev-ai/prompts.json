@@ -1,0 +1,91 @@
+{
+  "model": "nano-banana-pro-preview",
+  "reference_image": "memes/face-reference.png",
+  "reference_role": "REFERENCE IMAGE = the character's FACE, exactly as drawn: two solid round dots (eyes) joined by one single smile curve (mouth). This IS the character's head - there is no head outline, no circle, no nose, no eyebrows, no pupils, no extra facial features. Reproduce these two dots and the connecting curve faithfully in every image, the same relative size and spacing, drawn in the same ink as the body. Only the props and the body change; the face never changes except where the scene says so. CRITICAL: do NOT draw a circle, oval or outline for the head. Where a stick figure's head would be there is only empty white space containing the two dots and the curve, exactly like the reference. A head circle is a failed image.",
+  "style": "Minimalist hand-drawn stick figure webcomic sticker, bold deep-navy ink line art (#0B2545, no black, no other colours except a single tiny accent when named), doodle aesthetic, isolated on a solid white background, cartoon motion lines, hand-drawn text caption in the same navy ink, relatable sarcastic office humor, clean die-cut sticker design with a thick white border, high contrast, 2D vector graphic. The character 'Rumi' is a simple stick figure whose head is ONLY the reference face (two dots + one smile curve floating where the head would be). Pure #FFFFFF white background edge to edge (not grey, not off-white). Square 1:1 composition, character large and centered, caption in a clear hand-lettered style either above or below, spelled EXACTLY as given, nothing else written anywhere.",
+  "negative": "no head circle, no extra eyes, no pupils, no eyebrows, no nose, no teeth, no realistic shading, no grey fills, no gradients, no colours other than navy ink on white (plus the one named accent), no speech bubble unless named, no logos, no watermark, no misspelled or extra words, no border cropping.",
+  "stickers": [
+    {
+      "id": "not-a-bug",
+      "text": "It's not a bug, it's a feature",
+      "scene": "Rumi proudly presenting a small cartoon beetle sitting on a cushion with a gift bow, one hand gesturing like a salesperson. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "99-bugs",
+      "text": "99 little bugs in the code",
+      "scene": "Rumi at a laptop surrounded by a swarm of tiny doodle beetles crawling everywhere, one sweat drop, arms up. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "force-push",
+      "text": "git push --force and pray",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space (any other stick figures in the scene may have plain circle heads, Rumi must not). Rumi kneeling at a laptop with hands pressed together in prayer, tiny sparkle rays above, the laptop key 'Enter' oversized. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "friday-deploy",
+      "text": "Friday deploy? Bold.",
+      "scene": "IMPORTANT: Rumi has NO head circle - the head is only the two floating dots and the connected curve from the reference, drawn in empty white space (any other stick figures in the scene may have plain circle heads, Rumi must not). Rumi with a small crash helmet floating just above the two dots (the helmet does not enclose the face; the dots and curve stay visible in open white space below it), finger hovering over a huge button, tiny motion tremble lines. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "merge-conflict",
+      "text": "Merge conflict",
+      "scene": "Two Rumi stick figures (both with the reference face) pulling opposite ends of a rope that is a tangled git branch line with dots, both leaning back hard. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "lgtm",
+      "text": "LGTM",
+      "scene": "Rumi slamming a big rubber stamp onto a sheet of paper, ink splash lines, one eye winking (right eye is a small arch instead of a dot). Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "tabs-spaces",
+      "text": "Tabs vs spaces",
+      "scene": "Rumi in boxing gloves squaring up against a keyboard standing upright on its edge, tiny sweat drop, motion lines. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "accepted-diff",
+      "text": "Accepted the diff. Didn't read it.",
+      "scene": "Rumi covering the face area with one hand while the other hand clicks a laptop trackpad, tiny green check floating (check is the ONE accent colour: green #2E9E5B). Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "prompt-harder",
+      "text": "Prompt harder",
+      "scene": "Rumi flexing both arms like a bodybuilder in front of a laptop showing an empty chat box, tiny power lines radiating. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "compacting",
+      "text": "Compacting context...",
+      "scene": "Rumi straining to stuff an enormous stack of books into a tiny box, papers escaping, sweat drops, motion lines. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "token-budget",
+      "text": "Token budget exceeded",
+      "scene": "Rumi holding an open empty wallet upside down, three tiny coins flying away with wings, face frowning (small frown instead of the smile). Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "thinking",
+      "text": "Let me think about that",
+      "scene": "Rumi in a classic chin-on-fist thinker pose sitting on a rock, a loading spinner arc drawn above where the head is. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "dont-touch",
+      "text": "Works? Don't touch it.",
+      "scene": "Rumi standing with both arms spread wide protectively in front of a small server tower wrapped in caution tape. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "stack-overflow",
+      "text": "Stack Overflow said so",
+      "scene": "Rumi copying from a long unrolled scroll into a laptop with one finger, a tiny halo above the scroll. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "undefined",
+      "text": "Undefined is not a function",
+      "scene": "Rumi peering down into a hole in the floor shaped like a question mark, hands on knees. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    },
+    {
+      "id": "rubber-duck",
+      "text": "Rubber duck debugging",
+      "scene": "Rumi sitting cross-legged explaining with both hands to a small rubber duck on the desk (the duck is the ONE accent colour: gold #F5B301), a speech bubble with only squiggles. Rumi's head is NO head circle: only the two floating dots and the connected curve from the reference, empty white space around them."
+    }
+  ],
+  "batch": "dev-ai",
+  "imageSize": "2K"
+}
