@@ -69,6 +69,7 @@ cricket): a sibling script importing the same primitives. Full glyph list in
 |---|---|
 | `emoji-mark/` · `preview-mark.png` | The 12 originals from Kamal's "World of Rumi" sheet: mark, tongue, santa, sparkle, sad, angry, chef, tie, crying, thinking, sleeping, grin. `512/` + `128/`. |
 | `emoji-mark-emotions/` · `preview-mark-emotions.png` | 58 more emotions in the same grammar: positive, surprise/thinking, negative, work states. |
+| `lottie-meeting/` · `scripts/make_lottie_meeting.py` | **Meeting presence** — 12 call-bot states (listening, speaking, thinking…) as Lottie + GIF. |
 | `lottie-mark/` · `lottie/` | Lottie animations of the above (`scripts/make_lottie_mark.py`, `make_lottie_v2.py`, `rumi_mark_rig.py`, `rumi_rig.py`). |
 | `scripts/logo_mark_pack.py` · `logo_mark_emotions.py` · `mark_cli.py` | The renderer: logo-measured geometry, glyph library, CLI. |
 | `skills/rumi-logo-mark-emoji/` | Claude skill: grammar, rules, vocabulary, renderer copies. |

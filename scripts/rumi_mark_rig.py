@@ -177,11 +177,22 @@ def rrect(g, c, w, h, r, fill=NAVY):
 
 
 # ---------- animated helpers ----------
+def strict_frames(times_ms):
+    """ms -> frames, strictly increasing: python-lottie REPLACES a keyframe that lands on an existing frame,
+    so a 100->0 pair 14 ms apart would collapse into one key and become a loop-long fade."""
+    out, last = [], -1
+    for t in sorted(times_ms):
+        f = max(ms(t), last + 1); out.append(f); last = f
+    return out
+
+
 def fade(g, keys):
     o = g.transform.opacity
     if len(keys) == 1 and keys[0][0] == 0: o.value = keys[0][1]; return
-    if keys[0][0] > 0: o.add_keyframe(0, keys[0][1], HOLD)
-    for t, v in keys: o.add_keyframe(ms(t), v, LIN)
+    keys = sorted(keys, key=lambda k: k[0])
+    if keys[0][0] > 0: keys = [(0, keys[0][1])] + keys
+    frames = strict_frames([t for t, _ in keys])
+    for f, (t, v) in zip(frames, keys): o.add_keyframe(f, v, HOLD if f == 0 and keys[0][0] > 0 else LIN)
 
 
 def pop(g, t, dur=220, over=1.12, out_t=None, out_dur=180):
@@ -227,9 +238,10 @@ class MorphPath:
     def bake(self):
         if not self.keys: return
         prop = self.path.shape
-        for t, st, ease in sorted(self.keys, key=lambda k: k[0]):
+        keys = sorted(self.keys, key=lambda k: k[0]); frames = strict_frames([max(t, 0) for t, _, _ in keys])
+        for f, (t, st, ease) in zip(frames, keys):
             pts = self.shapes[st] if isinstance(st, str) else st
-            prop.add_keyframe(ms(max(t, 0)), to_bezier(pts, self.closed), ease)
+            prop.add_keyframe(f, to_bezier(pts, self.closed), ease)
 
 
 class Eye:
@@ -427,10 +439,10 @@ def sort_keyframes(obj, _seen=None):
     kfs = getattr(obj, "keyframes", None)
     if isinstance(kfs, list) and kfs and hasattr(kfs[0], "time"):
         kfs.sort(key=lambda k: k.time)
-        # drop exact-duplicate times (keep the last one written)
-        dedup = {}
-        for k in kfs: dedup[k.time] = k
-        kfs[:] = [dedup[t] for t in sorted(dedup)]
+        # two keys rounding to the same frame: keep both, push the later one 1 frame on (dropping one made a
+        # 100->0 pair collapse into a loop-long fade)
+        for a, b in zip(kfs, kfs[1:]):
+            if b.time <= a.time: b.time = a.time + 1
     for name in dir(obj):
         if name.startswith("_"): continue
         try: v = getattr(obj, name)
