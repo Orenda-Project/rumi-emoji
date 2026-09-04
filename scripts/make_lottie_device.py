@@ -134,7 +134,7 @@ def _(f):
 @emo("low-battery", 3.0)
 def _(f):
     f.breathe(1.5, 3000); f.eyes("lid", 0); f.mouth.set("flat", 0)
-    g, set_fill = battery(f, RED); set_fill(0, .12, HOLD)
+    g, set_fill = battery(f, RED); set_fill(0, .12, HOLD); set_fill(2990, .12, HOLD)   # two keys: a single keyframe renders blank in lottie-web
     o = g.transform.opacity
     for t in range(0, 3000, 1000): o.add_keyframe(ms(t), 100, SOFT); o.add_keyframe(ms(t + 500), 45, SOFT)
     o.add_keyframe(ms(3000), 100, SOFT)
