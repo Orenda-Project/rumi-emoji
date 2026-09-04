@@ -359,6 +359,7 @@ class Mouth:
     def set(self, state, t=0, dur=140): self.timeline.append((t, state, dur))
 
     def bake(self):
+        if self.timeline is None: self.sm.bake(); self.fm.bake(); return   # manual mode
         tl = sorted(self.timeline, key=lambda e: e[0]); merged = []
         for t, st, dur in tl:
             if merged and merged[-1][0] == max(t, 0): merged[-1] = (max(t, 0), st, dur)

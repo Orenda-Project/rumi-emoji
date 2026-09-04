@@ -77,6 +77,7 @@ cricket): a sibling script importing the same primitives. Full glyph list in
 |---|---|
 | `emoji-mark/` · `preview-mark.png` | The 12 originals from Kamal's "World of Rumi" sheet: mark, tongue, santa, sparkle, sad, angry, chef, tie, crying, thinking, sleeping, grin. `512/` + `128/`. |
 | `emoji-mark-emotions/` · `preview-mark-emotions.png` | 58 more emotions in the same grammar: positive, surprise/thinking, negative, work states. |
+| `lottie-device/` · `scripts/make_lottie_device.py` · `docs/face-states.md` | **Device face states** — 20 states incl. level-driven speaking/listening ramps, plus the state-machine spec. |
 | `lottie-meeting/` · `scripts/make_lottie_meeting.py` | **Meeting presence** — 12 call-bot states (listening, speaking, thinking…) as Lottie + GIF. |
 | `memes/` · `scripts/generate_memes.py` | Ink webcomic meme stickers (Gemini + mark reference), 10 in the first batch. |
 | `lottie-mark/` · `lottie/` | Lottie animations of the above (`scripts/make_lottie_mark.py`, `make_lottie_v2.py`, `rumi_mark_rig.py`, `rumi_rig.py`). |
